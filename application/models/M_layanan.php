@@ -105,6 +105,12 @@ class M_layanan extends CI_Model{
       return $query->result();
     }
 
+    public function get_data_user() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_user');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+  }
+
 
 
 }

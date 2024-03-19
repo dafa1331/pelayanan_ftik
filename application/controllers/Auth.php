@@ -30,13 +30,15 @@ class Auth extends CI_Controller{
             // Redirect ke halaman dashboard atau halaman yang sesuai dengan role
             if ($user->level == 'superadmin' || $user->level == 'pegawai') {
                 redirect('dashboard');
-        } else {
-            redirect('auth');
+            } else if ($user->level == 'prodi'){
+                redirect('prodi/pengajuan_layanan');
+            } else {
+                redirect('auth');
+            }
+        }else{
+            echo 'password salah';
         }
-    }else{
-        echo 'password salah';
     }
-}
 
     function keluar() {
         $this->user_model->logout();

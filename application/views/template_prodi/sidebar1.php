@@ -1,4 +1,4 @@
-<body>
+
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -20,26 +20,31 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li class="active">
-                                <a href="<?php echo base_url('dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
-                            </li>
-                            <li><a href="<?php echo base_url('layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Layanan</span></a></li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Data Pegawai</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                                 <ul class="collapse">
-                                    <li><a href="<?php echo base_url('pegawai')?>">Aktif</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Tubel</a></li>
+                                    <li><a href="index.html">ICO dashboard</a></li>
+                                    <li><a href="index2.html">Ecommerce dashboard</a></li>
+                                    <li><a href="index3.html">SEO dashboard</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-user"></i><span>Layanan Mahasiswa</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Sidebar
+                                        Types
+                                    </span></a>
                                 <ul class="collapse">
-                                    <li><a href="<?php echo base_url('pengantar_kp')?>">Pengantar Kerja Praktik</a></li>
-                                    <li><a href="<?php echo base_url('tugas_akhir')?>">Izin Penelitian</a></li>
-                                    <li><a href="<?php echo base_url('pinjam')?>">Peminjaman Alat</a></li>
+                                    <li><a href="index.html">Left Sidebar</a></li>
+                                    <li><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url('user')?>"><i class="ti-map-alt"></i> <span>User</span></a></li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-pie-chart"></i><span>Charts</span></a>
+                                <ul class="collapse">
+                                    <li><a href="barchart.html">bar chart</a></li>
+                                    <li><a href="linechart.html">line Chart</a></li>
+                                    <li><a href="piechart.html">pie chart</a></li>
+                                </ul>
+                            </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-palette"></i><span>UI Features</span></a>
                                 <ul class="collapse">
@@ -69,13 +74,13 @@
                                     <li><a href="themify.html">themify icons</a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-table"></i>
                                     <span>Tables</span></a>
                                 <ul class="collapse">
                                     <li><a href="table-basic.html">basic table</a></li>
                                     <li><a href="table-layout.html">table layout</a></li>
-                                    <li><a href="datatable.html">datatable</a></li>
+                                    <li class="active"><a href="datatable.html">datatable</a></li>
                                 </ul>
                             </li>
                             <li><a href="maps.html"><i class="ti-map-alt"></i> <span>maps</span></a></li>
@@ -94,7 +99,14 @@
                                     <li><a href="screenlock2.html">Lock Screen 2</a></li>
                                     <li><a href="reset-pass.html">reset password</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
+                                    <span>Error</span></a>
+                                <ul class="collapse">
                                     <li><a href="404.html">Error 404</a></li>
+                                    <li><a href="403.html">Error 403</a></li>
                                     <li><a href="500.html">Error 500</a></li>
                                 </ul>
                             </li>
@@ -139,18 +151,19 @@
                             </form>
                         </div>
                     </div>
-                    <!-- profile info & task notification -->
+
                     <div class="col-sm-6 clearfix">
-            <div class="user-profile pull-right">
-                <img class="avatar user-thumb" src="<?php echo base_url()?>assets/images/author/avatar.png" alt="avatar">
-                <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Message</a>
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="<?php echo base_url('auth/keluar')?>">Log Out</a>
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="<?php echo base_url()?>assets/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Message</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="<?php echo base_url('auth/keluar')?>">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    
                 </div>
             </div>
-        </div>
-                </div>
-            </div>
-            <!-- header area end -->

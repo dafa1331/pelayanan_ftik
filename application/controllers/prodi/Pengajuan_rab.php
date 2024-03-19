@@ -1,5 +1,6 @@
 <?php
-class Pengajuan_layanan extends CI_Controller{
+
+class Pengajuan_rab extends CI_Controller{
     public function __construct() {
         parent::__construct();
         // Periksa status login saat konstruktor dijalankan

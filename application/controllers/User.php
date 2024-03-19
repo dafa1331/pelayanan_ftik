@@ -1,16 +1,30 @@
 <?php
-class Register extends CI_Controller{
+
+class User extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('user_model');
-        $this->load->library('form_validation');
+        // Periksa status login saat konstruktor dijalankan
+        if (!$this->session->userdata('logged_in')) {
+            redirect('auth'); // Redirect ke halaman login jika tidak login
+        }
     }
 
     public function index(){
-        $this->load->view('register');
+        $data['result'] = $this->m_layanan->get_data_user();
+        $this->load->view('template_datatable/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('v_user', $data);
+        $this->load->view('template_datatable/footer');
     }
 
-    public function proses_register() {
+    public function insert_user(){
+        $this->load->view('template_datatable/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('f_user');
+        $this->load->view('template_datatable/footer');
+    }
+
+    public function proses_insert(){
         $this->form_validation->set_rules('nama_user', 'nama_user', 'required');
         $this->form_validation->set_rules('username', 'username', 'required|is_unique[tb_user.username]');
         $this->form_validation->set_rules('password', 'password', 'required');
@@ -26,12 +40,12 @@ class Register extends CI_Controller{
                 'username' => $this->input->post('username'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
                 'bagian' => $this->input->post('bagian'),
-                'level' => 'mahasiswa',
+                'level' => 'prodi',
                 'id_prodi' => 12,
             );
 
             $this->user_model->save_user($data);
-            redirect('auth');
+            redirect('user');
         }
     }
 }
