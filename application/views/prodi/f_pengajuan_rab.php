@@ -4,8 +4,8 @@
             <div class="breadcrumbs-area clearfix">
                 <h4 class="page-title pull-left">Pegawai</h4>
                 <ul class="breadcrumbs pull-left">
-                    <li><a href="<?php echo base_url('dashboard')?>">Home</a></li>
-                    <li><a href="<?php echo base_url('layanan')?>">Layanan</a></li>
+                    <li><a href="<?php echo base_url('prodi/pengajuan_layanan')?>">Home</a></li>
+                    <li><a href="<?php echo base_url('prodi/pengajuan_rab')?>">RAB</a></li>
                     <li><span>Insert</span></li>
                 </ul>
             </div>
@@ -19,7 +19,7 @@
         <div class="col-12 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">Tambah Data Layanan</h4>
+                    <h4 class="header-title">Tambah Data Pengajuan Kegiatan</h4>
 
                     <form action="">
                     <div class="col-lg-8 mt-10 mt-lg-0">
