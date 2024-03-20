@@ -29,7 +29,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav><!-- End Nav Menu -->
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted" href="<?php echo base_url('auth')?>">Login</a>
 
     </div>
   </header><!-- End Header -->

@@ -109,9 +109,33 @@ class M_layanan extends CI_Model{
       // Ambil data dari tabel atau sumber data lainnya
       $query = $this->db->get('tb_user');
       return $query->result(); // Mengembalikan hasil query sebagai objek array
-  }
+    }
 
+    public function get_data_rab() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_pengajuan_kegiatan');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+    }
 
+    public function data_rab($id){
+      $this->db->select('*');
+      $this->db->join('tb_anggaran', 'tb_pengajuan_kegiatan.id_pengajuan = tb_anggaran.id_pengajuan');
+      $this->db->from('tb_pengajuan_kegiatan');
+      $this->db->where('tb_pengajuan_kegiatan.id_pengajuan', $id);
 
+      $query = $this->db->get();
+      return $query->result();
+    }
+
+    public function tampil_prodi(){
+      $level = $this->session->userdata('username');
+      $this->db->select('*');
+      $this->db->from('tb_user');
+      $this->db->where('tb_user.username', $level);
+
+      $query = $this->db->get();
+      return $query->result();
+    }
+  
 }
 ?>

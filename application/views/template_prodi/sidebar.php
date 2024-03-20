@@ -23,13 +23,7 @@
                             <li class="active">
                                 <a href="<?php echo base_url('dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Data Pegawai</span></a>
-                                <ul class="collapse">
-                                    <li><a href="#">Aktif</a></li>
-                                    <li><a href="#">Tubel</a></li>
-                                </ul>
-                            </li>
+                           
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-palette"></i><span>Permohonan Layanan</span></a>
                                 <ul class="collapse">

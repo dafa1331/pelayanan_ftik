@@ -32,21 +32,22 @@
                                                 <th width="100px">Nomor</th>
                                                 <th>Nama Kegiatan</th>
                                                 <th>PIC Kegiatan</th>
-                                                <th>Kode Akun</th>
-                                                <th>Jumlah Anggaran</th>
+                                                <th>Nomor HP/WA</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                            <?php
+                                            $no = 1; 
+                                            foreach($rab as $rab) :?>
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><?php echo $no++?></td>
+                                                <td><?php echo $rab->nama_kegiatan?></td>
+                                                <td><?php echo $rab->pic_kegiatan?></td>
+                                                <td><?php echo $rab->no_hp?></td>
+                                                <td><?php echo anchor('prodi/pengajuan_rab/detail_data/'.$rab->id_pengajuan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
                                             </tr>
-                                            
+                                            <?php endforeach?>
                                         </tbody>
                                     </table>
                                 </div>

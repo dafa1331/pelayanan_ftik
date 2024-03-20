@@ -2,7 +2,7 @@
     <div class="row align-items-center">
         <div class="col-sm-10">
             <div class="breadcrumbs-area clearfix">
-                <h4 class="page-title pull-left">Pegawai</h4>
+                <h4 class="page-title pull-left">Program Studi</h4>
                 <ul class="breadcrumbs pull-left">
                     <li><a href="<?php echo base_url('prodi/pengajuan_layanan')?>">Home</a></li>
                     <li><a href="<?php echo base_url('prodi/pengajuan_rab')?>">RAB</a></li>
@@ -21,82 +21,67 @@
                 <div class="card-body">
                     <h4 class="header-title">Tambah Data Pengajuan Kegiatan</h4>
 
-                    <form action="">
+                    <form method="post" action="<?php echo base_url('prodi/pengajuan_rab/proses_insert')?>">
                     <div class="col-lg-8 mt-10 mt-lg-0">
 
                       <div class="row gy-2 gx-md-3">
 
-                        <div class="col-md-12 form-group">
-                          <input type="text" name="" class="form-control" placeholder="Masukkan Nama Pemohon" required>
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <input type="text" name="nip_pemohon" class="form-control" placeholder="Masukkan NIP/NRK/NIM Pemohon" required>
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <select class="form-control" name="status_pemohon" >
-                            <option value="">--Status Pemohon--</option>
-                            <option>Pegawai</option>
-                            <option>Mahasiswa</option>
-                            <option>Stakeholder</option>
-                          </select>
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <select class="form-control" name="unit_asal" id="options">
-                            <option value="">--Unit Asal--</option>
-                            <option value="Program Studi Teknik Sipil">Program Studi Teknik Sipil</option>
-                            <option value="Program Studi Perencanaan Wilayah dan Kota">Program Studi Perencanaan Wilayah dan Kota</option>
-                            <option value="Program Studi Teknik Geomatika">Program Studi Teknik Geomatika</option>
-                            <option value="Program Studi Arsitektur">Program Studi Arsitektur</option>
-                            <option value="Program Studi Teknik Lingkungan">Program Studi Teknik Lingkungan</option>
-                            <option value="Program Studi Teknik Kelautan">Program Studi Teknik Kelautan</option>
-                            <option value="Program Studi Desain Komunikasi Visual">Program Studi Desain Komunikasi Visual</option>
-                            <option value="Program Studi Arsitektur Lanskap">Program Studi Arsitektur Lanskap</option>
-                            <option value="Program Studi Teknik Perkeretaapian">Program Studi Teknik Perkeretaapian</option>
-                            <option value="Program Studi Rekayasa Tata Kelola Air Terpadu">Program Studi Rekayasa Tata Kelola Air Terpadu</option>
-                            <option value="Program Studi Pariwisata">Program Studi Pariwisata</option>
-                            <option value="Fakultas Teknologi Infrastruktur dan Kewilayahan">Fakultas Teknologi Infrastruktur dan Kewilayahan</option>
-                            <option value="other">lainnya</option>
-                          </select>
-                        </div>
-
-                        <!-- Input untuk opsi "lainnya" -->
-                        <div class="col-md-12 form-group" id="other_option_container" style="display: none;">
-                            <input type="text" class="form-control" id="other_option" name="other_option" placeholder="Masukkan Asal Pemohon">
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <input type="text" name="no_hp" class="form-control" placeholder="Masukkan No Hp" required>
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <textarea class="form-control" name="keperluan" rows="5" placeholder="Masukkan Keperluan Permohonan" required></textarea>
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <select class="form-control" name="bagian" >
-                            <option value="">--Tim Kerja--</option>
-                            <option value="akademik">Akademik</option>
-                            <option value="kemahasiswaan">Kemahasiswaan</option>
-                            <option value="keuangan dan perencanaan">Keuangan dan Perencanaan</option>
-                            <option value="humas dan kerjasama">Humas dan Kerjasama</option>
-                            <option value="rumah tangga dan bmn">Rumah Tangga dan BMN</option>
-                            <option value="kepegawaian">Kepegawaian</option>
-                            <option value="customer service">Customer Service (CS)</option>
-                            <option value="tata laksana dan teknologi informasi">Tata Laksana dan Teknologi Informasi</option>
-                          </select>
-                        </div>
-
-                        <div class="col-md-12 form-group">
-                          <input type="file" class="form-control" name="berkas_pendukung">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" name="button">Simpan</button>
-
-
+                      <div class="col-md-12 form-group">
+                        <input type="text" name="nomor" class="form-control" value="<?php echo $nomor?>" placeholder="Masukkan Nomor Layanan" required readonly>
                       </div>
+
+                        <div class="col-md-12 form-group">
+                          <input type="text" name="nama_kegiatan" class="form-control" placeholder="Nama Kegiatan" required>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                          <input type="text" name="pic_kegiatan" class="form-control" placeholder="Nama PIC Kegiatan" required>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                          <input type="text" name="nip_pic" class="form-control" placeholder="NIP/NRK PIC" required>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                          <input type="text" name="no_hp" class="form-control" placeholder="Nomor Hp PIC" required>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                          <label for="">Tanggal Pengajuan</label>
+                          <input type="date" name="tanggal_pengajuan" class="form-control" placeholder="tanggal_pengajuan" required>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                          <label for="">Tanggal Mulai</label>
+                          <input type="date" name="tgl_mulai_kegiatan" class="form-control" placeholder="tanggal mulai" required>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                          <label for="">Tanggal Selesai</label>
+                          <input type="date" name="tgl_selesai_kegiatan" class="form-control" placeholder="tanggal selesai" required>
+                        </div>
+
+                        
+                        <div class="col-md-12 form-group">
+                          <?php foreach ($pegawai as $p) :?>
+                          <input type="text" name="prodi_pengusul" class="form-control" value="<?php echo $p->bagian?>" placeholder="Masukkan No Hp" readonly>
+                          <?php endforeach?>
+                        </div>
+                        
+                        <div>
+                        <div id="formContainer" class="col-md-12">
+                          <div class="row gy-2 gx-md-3">
+
+                          </div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                          <button type="button" class="btn btn-success" id="addForm">Tambahkan Detail Anggaran</button>
+                        </div>
+                          </div>
+                        
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary" name="button">Simpan</button>
                     </div>
                     </form>
                 </div>
@@ -106,6 +91,26 @@
         <!-- Primary table end -->
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+        $(document).ready(function(){
+            // Fungsi untuk menambahkan form baru
+            $("#addForm").click(function(){
+                var newForm = '<div class="col-md-12"><div class="row gy-2 gx-md-3"><label>Anggaran</label><div class="col-md-12 form-group">  <input type="text" class="form-control" name="jenis_akun[]" placeholder="Jenis Akun"></div> <div class="col-md-12 form-group"><input type="text" class="form-control" name="kode_akun[]" placeholder="Kode Akun"></div> <div class="col-md-12 form-group"><input type="text" class="form-control" name="uraian[]" placeholder="uraian singkat"></div> <div class="col-md-12 form-group"><textarea class="form-control" name="keterangan[]" rows="5" placeholder="Keterangan"></textarea></div> <div class="col-md-12 form-group"><input type="text" class="form-control" name="penggunaan_anggaran[]" placeholder="Penggunaan Anggaran"></div> </div class="col-md-12 form-group"><button class="removeForm btn btn-danger">Hapus</button></div><br>';
+                
+                $("#formContainer").append(newForm);
+
+            });
+
+            // Fungsi untuk menghapus form
+            $(document).on("click", ".removeForm", function(){
+                $(this).parent().remove();
+            });
+
+        });
+    </script>
 
 
 
