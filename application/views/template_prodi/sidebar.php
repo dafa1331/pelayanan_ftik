@@ -26,8 +26,8 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Data Pegawai</span></a>
                                 <ul class="collapse">
-                                    <li><a href="<?php echo base_url('pegawai')?>">Aktif</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Tubel</a></li>
+                                    <li><a href="#">Aktif</a></li>
+                                    <li><a href="#">Tubel</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -35,7 +35,7 @@
                                 <ul class="collapse">
                                     <li><a href="accordion.html">Pengajuan SK</a></li>
                                     <li><a href="alert.html">Pengajuan Surat Tugas</a></li>
-                                    <li><a href="badge.html">Pengajuan RAB</a></li>
+                                    <li><a href="<?php echo base_url('prodi/pengajuan_rab')?>">Pengajuan RAB</a></li>
                                     <li><a href="button.html">Button</a></li>
                                     <li><a href="button-group.html">Button Group</a></li>
                                     <li><a href="cards.html">Cards</a></li>

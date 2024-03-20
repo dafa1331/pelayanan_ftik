@@ -11,7 +11,14 @@ class Pengajuan_rab extends CI_Controller{
     public function index(){
         $this->load->view('template_prodi/header');
         $this->load->view('template_prodi/sidebar');
-        $this->load->view('prodi/prodi');
+        $this->load->view('prodi/v_pengajuan_rab');
+        $this->load->view('template_prodi/footer');
+    }
+
+    public function insert(){
+        $this->load->view('template_prodi/header');
+        $this->load->view('template_prodi/sidebar');
+        $this->load->view('prodi/f_pengajuan_rab');
         $this->load->view('template_prodi/footer');
     }
 }

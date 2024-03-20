@@ -22,7 +22,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Data RAB</h4>
-                                <?php echo anchor('layanan/insert','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
+                                <?php echo anchor('prodi/pengajuan_rab/insert','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
                                 <br>
                                 <br>
                                 <div class="data-tables datatable-primary">
@@ -30,9 +30,10 @@
                                         <thead class="text-capitalize">
                                             <tr>
                                                 <th width="100px">Nomor</th>
-                                                <th>Nama Pemohon</th>
-                                                <th>Asal Pemohon</th>
-                                                <th>Keperluan</th>
+                                                <th>Nama Kegiatan</th>
+                                                <th>PIC Kegiatan</th>
+                                                <th>Kode Akun</th>
+                                                <th>Jumlah Anggaran</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
