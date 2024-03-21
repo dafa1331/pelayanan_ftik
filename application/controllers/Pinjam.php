@@ -26,11 +26,11 @@ class Pinjam extends CI_Controller{
     $this->load->view('template_datatable/footer');
   }
 
-  public function pengembalian(){
+  public function pengembalian($id){
     $kondisi = $this->input->post('kondisi_barang');
 
     $data = array(
-      'tgl_kembali' => date("Y-m-d"),
+      'tanggal_kembali' => date("Y-m-d"),
       'waktu_kembali' => date("H:i:s"),
       'status_pengembalian' => 1,
       'kondisi' => $kondisi,
