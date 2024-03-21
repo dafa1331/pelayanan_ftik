@@ -177,6 +177,17 @@ class M_layanan extends CI_Model{
       $query = $this->db->get();
       return $query->result();
     }
+
+    public function get_layanan_by_prodi(){
+      $level = $this->session->userdata('username');
+      $this->db->select('*');
+      $this->db->join('tb_user', 'tb_layanan.unit_asal = tb_user.bagian');
+      $this->db->from('tb_layanan');
+      $this->db->where('tb_user.username', $level);
+
+      $query = $this->db->get();
+      return $query->result();
+    }
   
 }
 ?>
