@@ -22,9 +22,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Data Peminjaman</h4>
-                                <?php echo anchor('layanan/insert','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
-                                <br>
-                                <br>
+                                
                                 <div class="data-tables datatable-primary">
                                     <table id="dataTable2" class="text-center" width="100%">
                                         <thead class="text-capitalize">
@@ -34,8 +32,8 @@
                                                 <th>NIP/NRK/NIM</th>
                                                 <th>Prodi</th>
                                                 <th>Status Pengembalian</th>
-                                                <th></th>
-                                                <th></th>
+                                                <th>Aksi</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -55,7 +53,6 @@
                                                 <td><?php echo $r->prodi?></td>
                                                 <td><?php echo $belum?></td>
                                                 <td><?php echo anchor('pinjam/detail_data/'.$r->id_pinjam,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
-                                                <td><a href="<?php echo base_url('pinjam/pengembalian/'.$r->id_pinjam)?>" class="btn btn-warning fa fa-edit"></a></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>

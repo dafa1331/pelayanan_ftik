@@ -97,6 +97,7 @@
 </table>
 <hr>
         <div class="col-md-12 form-group">
+            <input type="hidden" name="id_pinjam" class="form-control" value="<?php echo $detail1->id_pinjam?>" required >
             <input type="text" name="kondisi_barang" class="form-control" placeholder="Masukkan Kondisi Barang" required>
          </div>
 

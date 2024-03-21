@@ -26,7 +26,9 @@ class Pinjam extends CI_Controller{
     $this->load->view('template_datatable/footer');
   }
 
-  public function pengembalian($id){
+  public function pengembalian(){
+
+    $id = $this->input->post('id_pinjam');
     $kondisi = $this->input->post('kondisi_barang');
 
     $data = array(
@@ -41,6 +43,8 @@ class Pinjam extends CI_Controller{
     );
 
     $ubah = $this->m_layanan->update($where, $data, 'tb_pinjam_alat');
+
+    redirect('pinjam');
   }
 
 
