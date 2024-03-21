@@ -30,8 +30,8 @@ class Pinjam extends CI_Controller{
     $kondisi = $this->input->post('kondisi_barang');
 
     $data = array(
-      'tgl_kembali' => date("y-m-d"),
-      'waktu_kembali' => date("H-i-s"),
+      'tgl_kembali' => date("Y-m-d"),
+      'waktu_kembali' => date("H:i:s"),
       'status_pengembalian' => 1,
       'kondisi' => $kondisi,
     );
