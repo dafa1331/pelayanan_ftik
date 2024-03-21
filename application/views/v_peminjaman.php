@@ -33,21 +33,29 @@
                                                 <th>Nama</th>
                                                 <th>NIP/NRK/NIM</th>
                                                 <th>Prodi</th>
-                                                <th>Keperluan</th>
-                                                <th>Aksi</th>
+                                                <th>Status Pengembalian</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             $nomor = 1;
-                                            foreach ($result as $r) :?>
+                                            foreach ($result as $r) :
+                                            if($r->status_pengembalian == 0){
+                                                $belum = '<button class="btn btn-danger">Belum Dikembalikan</button>';
+                                            }else{
+                                                $belum = '<button class="btn btn-success">Sudah Dikembalikan</button>';
+                                            }
+                                            ?>
                                             <tr>
                                                 <td><?php echo $nomor++?></td>
                                                 <td><?php echo $r->nama_mhs?></td>
                                                 <td><?php echo $r->nim_mhs?></td>
                                                 <td><?php echo $r->prodi?></td>
-                                                <td><?php echo $r->keperluan?></td>
+                                                <td><?php echo $belum?></td>
                                                 <td><?php echo anchor('pinjam/detail_data/'.$r->id_pinjam,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><a href="<?php echo base_url('pinjam/pengembalian/'.$r->id_pinjam)?>" class="btn btn-warning fa fa-edit"></a></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>
@@ -70,3 +78,24 @@
     </div>
     <!-- page container area end -->
     <!-- offset area start -->
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        This is a modal.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
