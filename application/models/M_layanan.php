@@ -127,11 +127,52 @@ class M_layanan extends CI_Model{
       return $query->result();
     }
 
+    public function get_data_rab1(){
+      $level = $this->session->userdata('username');
+
+      $this->db->select('*');
+      $this->db->from('tb_pengajuan_kegiatan');
+      $this->db->join('tb_user', 'tb_pengajuan_kegiatan.prodi_pengusul = tb_user.bagian');
+      $this->db->where('tb_user.username', $level);
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get();
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+    }
+
     public function tampil_prodi(){
       $level = $this->session->userdata('username');
       $this->db->select('*');
       $this->db->from('tb_user');
       $this->db->where('tb_user.username', $level);
+
+      $query = $this->db->get();
+      return $query->result();
+    }
+
+    public function get_data_sk() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_pengajuan_sk');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+    }
+
+    public function get_data_sk1() {
+
+      $level = $this->session->userdata('username');
+
+      $this->db->select('*');
+      $this->db->from('tb_pengajuan_sk');
+      $this->db->join('tb_user', 'tb_pengajuan_sk.prodi_pengusul = tb_user.bagian');
+      $this->db->where('tb_user.username', $level);
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get();
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+    }
+
+    public function data_sk($id){
+      $this->db->select('*');
+      $this->db->join('tb_lampiran_sk', 'tb_pengajuan_sk.id_pengajuan = tb_lampiran_sk.id_pengajuan_sk');
+      $this->db->from('tb_pengajuan_sk');
+      $this->db->where('tb_pengajuan_sk.id_pengajuan', $id);
 
       $query = $this->db->get();
       return $query->result();

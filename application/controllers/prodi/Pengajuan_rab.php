@@ -9,7 +9,7 @@ class Pengajuan_rab extends CI_Controller{
         }
     }
     public function index(){
-        $data['rab'] = $this->m_layanan->get_data_rab(); 
+        $data['rab'] = $this->m_layanan->get_data_rab1(); 
         $this->load->view('template_prodi/header');
         $this->load->view('template_prodi/sidebar');
         $this->load->view('prodi/v_pengajuan_rab', $data);

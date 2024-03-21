@@ -13,7 +13,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="<?php echo base_url()?>assets/images/icon/logo.png" alt="logo"></a>
+                    <a href="index.html"><img src="<?php echo base_url()?>assets/images/ftik.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">

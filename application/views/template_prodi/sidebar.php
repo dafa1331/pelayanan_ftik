@@ -13,7 +13,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="<?php echo base_url()?>assets/images/icon/logo.png" alt="logo"></a>
+                    <a href="index.html"><img src="<?php echo base_url()?>assets/images/ftik.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -23,27 +23,15 @@
                             <li class="active">
                                 <a href="<?php echo base_url('dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
+
+                            <li><a href="<?php echo base_url('prodi/acc_prodi')?>"><i class="ti-palette"></i> <span>Layanan Masuk</span></a></li>
                            
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-palette"></i><span>Permohonan Layanan</span></a>
                                 <ul class="collapse">
-                                    <li><a href="accordion.html">Pengajuan SK</a></li>
-                                    <li><a href="alert.html">Pengajuan Surat Tugas</a></li>
+                                    <li><a href="<?php echo base_url('prodi/pengajuan_sk')?>">Pengajuan SK</a></li>
                                     <li><a href="<?php echo base_url('prodi/pengajuan_rab')?>">Pengajuan RAB</a></li>
-                                    <li><a href="button.html">Button</a></li>
-                                    <li><a href="button-group.html">Button Group</a></li>
-                                    <li><a href="cards.html">Cards</a></li>
-                                    <li><a href="dropdown.html">Dropdown</a></li>
-                                    <li><a href="list-group.html">List Group</a></li>
-                                    <li><a href="media-object.html">Media Object</a></li>
-                                    <li><a href="modal.html">Modal</a></li>
-                                    <li><a href="pagination.html">Pagination</a></li>
-                                    <li><a href="popovers.html">Popover</a></li>
-                                    <li><a href="progressbar.html">Progressbar</a></li>
-                                    <li><a href="tab.html">Tab</a></li>
-                                    <li><a href="typography.html">Typography</a></li>
-                                    <li><a href="form.html">Form</a></li>
-                                    <li><a href="grid.html">grid system</a></li>
+                                    <li><a href="#"><i>Pengajuan Surat Tugas (coming soon)</i></a></li>
                                 </ul>
                             </li>
                             
