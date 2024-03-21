@@ -25,6 +25,7 @@ class Alat_ftik extends CI_Controller{
       'keperluan' => $keperluan_pinjam,
       'tanggal_pinjam' => date("Y-m-d"),
       'waktu_pinjam' => date("H:i:s"),
+      'status_pengembalian' => 0,
     );
 
     $simpan_pinjam = $this->m_layanan->simpan_data_layanan($simpan, 'tb_pinjam_alat');

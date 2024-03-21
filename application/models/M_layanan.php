@@ -12,6 +12,11 @@ class M_layanan extends CI_Model{
         return $query->result(); // Mengembalikan hasil query sebagai objek array
     }
 
+    public function update($where, $data, $table){
+      $this->db->where($where);
+      $this->db->update($table, $data);
+    }
+
     function get_nomor(){
         $q = $this->db->query("SELECT MAX(RIGHT(nomor,4)) AS kd_max FROM tb_layanan WHERE DATE(tanggal_pengajuan)=CURDATE()");
         $kd = "";
@@ -89,10 +94,21 @@ class M_layanan extends CI_Model{
       return $query->result();
     }
 
-    public function get_data_alat() {
-        // Ambil data dari tabel atau sumber data lainnya
-        $query = $this->db->get('tb_pinjam_alat');
-        return $query->result(); // Mengembalikan hasil query sebagai objek array
+    public function get_data_alat($id) {
+      
+        $hasil = $this->db->where('id_pinjam', $id)->get('tb_pinjam_alat');
+        if($hasil->num_rows() > 0){
+          return $hasil->result();
+        }else{
+          return false;
+        }
+      
+    }
+
+    public function get_pinjam() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_pinjam_alat');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
     }
 
     public function detail_pinjam($id){

@@ -10,7 +10,7 @@ class Pinjam extends CI_Controller{
   }
 
   public function index(){
-    $data['result'] = $this->m_layanan->get_data_alat();
+    $data['result'] = $this->m_layanan->get_pinjam();
     $this->load->view('template_datatable/header');
     $this->load->view('template/sidebar');
     $this->load->view('v_peminjaman', $data);
@@ -25,5 +25,24 @@ class Pinjam extends CI_Controller{
     $this->load->view('d_pinjam', $data);
     $this->load->view('template_datatable/footer');
   }
+
+  public function pengembalian(){
+    $kondisi = $this->input->post('kondisi_barang');
+
+    $data = array(
+      'tgl_kembali' => date("y-m-d"),
+      'waktu_kembali' => date("H-i-s"),
+      'status_pengembalian' => 1,
+      'kondisi' => $kondisi,
+    );
+
+    $where = array(
+      'id_pinjam' => $id,
+    );
+
+    $ubah = $this->m_layanan->update($where, $data, 'tb_pinjam_alat');
+  }
+
+
 }
 ?>
