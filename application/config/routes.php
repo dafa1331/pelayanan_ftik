@@ -54,3 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['layanan/detail/(:any)'] = 'layanan/detail/$1/$2';
 $route['pegawai/detail/(:any)'] = 'pegawai/detail/$2';
+$route['prodi/acc_prodi/detail_data/(:any)'] = 'detail/$1';
+

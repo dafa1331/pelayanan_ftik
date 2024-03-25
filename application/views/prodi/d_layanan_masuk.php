@@ -19,9 +19,11 @@
           <div class="card">
               <div class="card-body">
                   <h4 class="header-title">Detail Data Layanan</h4>
+<form method="post" action="<?php echo base_url('prodi/acc_prodi/acc')?>">
+<?php foreach($detail as $dt) :?>
 
 <table class="table table-strip">
-  <?php foreach($detail as $dt) :?>
+
   <tr>
     <td width="200 px">Nomor</td>
     <td width="10 px">:</td>
@@ -49,7 +51,7 @@
   <tr>
     <td width="200 px">Unit Asal</td>
     <td width="10 px">:</td>
-    <td><?php echo $dt->unit_asal?>l</td>
+    <td><?php echo $dt->unit_asal?></td>
   </tr>
 
   <tr>
@@ -89,11 +91,15 @@
   </tr>
 <?php endforeach?>
 </table>
+        <div class="col-md-12 form-group">
+            <input type="hidden" name="nomor_layanan" class="form-control" value="<?php echo $dt->nomor?>" required >
+         </div>
 
+<button type="submit" class="btn btn-success">validasi</button>
+
+</form>
+<br>
 <?php echo anchor('prodi/acc_prodi','<button class=" btn btn-primary btn-sm">Kembali</button>') ?>
-<?php foreach ($detail as $dt) :?>
-<?php echo anchor('prodi/acc_prodi/validasi_prodi/'.$dt->nomor,'<button class=" btn btn-success btn-sm">Validasi</button>') ?>
-<?php endforeach?>
 </div>
 </div>
 </div>

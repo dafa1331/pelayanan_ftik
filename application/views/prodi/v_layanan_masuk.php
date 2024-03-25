@@ -31,22 +31,31 @@
                                                 <th>Nama Mahasiswa</th>
                                                 <th>NIM</th>
                                                 <th>Layanan</th>
+                                                <th>Status Validasi</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
+                                            
                                             $no = 1; 
                                             foreach ($layanan as $l) :
+                                                if($l->acc_prodi == 0){
+                                                    $belum = '<button class="btn btn-danger">Belum</button>';
+                                                }else{
+                                                    $belum = '<button class="btn btn-success">Sudah</button>';
+                                                }
                                             ?>
                                             <tr>
                                                 <td><?php echo $no++?></td>
                                                 <td><?php echo $l->nama_pemohon?></td>
+                                                <td><?php echo $l->nama_pemohon?></td> 
                                                 <td><?php echo $l->nama_pemohon?></td>
-                                                <td><?php echo $l->nama_pemohon?></td>
-                                                <td><?php echo anchor('prodi/acc_prodi/detail_data/'.$l->nomor,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><?php echo $belum?></td>
+                                                <td><?php echo anchor('prodi/acc_prodi/detail/'.$l->nomor,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
                                             </tr>
                                            <?php endforeach?>
+                                           <!-- prodi/acc_prodi/detail_data/ -->
                                         </tbody>
                                     </table>
                                 </div>

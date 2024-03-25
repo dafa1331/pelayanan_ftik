@@ -199,6 +199,7 @@ class M_layanan extends CI_Model{
       $this->db->select('*');
       $this->db->join('tb_user', 'tb_layanan.unit_asal = tb_user.bagian');
       $this->db->from('tb_layanan');
+      $this->db->order_by('acc_prodi', 'asc');
       $this->db->where('tb_user.username', $level);
 
       $query = $this->db->get();
