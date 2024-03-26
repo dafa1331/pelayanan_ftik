@@ -71,6 +71,15 @@ class M_layanan extends CI_Model{
           return $query->row();
         }
 
+      public function get_data_nomor($id){
+        $hasil = $this->db->where('id_surat', $id)->get('tb_nomor_pengantar_kp');
+        if($hasil->num_rows() > 0){
+          return $hasil->result();
+        }else{
+          return false;
+        }
+      }
+
     public function get_data_kp() {
         // Ambil data dari tabel atau sumber data lainnya
         $query = $this->db->get('tb_nomor_pengantar_kp');

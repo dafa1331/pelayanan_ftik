@@ -32,16 +32,20 @@
                                                 <th>NIM</th>
                                                 <th>Nomor Surat</th>
                                                 <th>Tanggal Mulai</th>
-                                                <th>Aksi</th>
+                                                <th></th>
+
+
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($result as $r) :?>
+                                            <?php foreach ($result as $r) :
+                                            ?>
+                                                
                                             <tr>
                                                 <td><?php echo $r->nim?></td>
                                                 <td><?php echo $r->nomor_surat?></td>
                                                 <td><?php echo format_indo($r->tanggal_mulai)?></td>
-                                                <td><?php echo anchor('pengantar_kp/detail_data/'.$r->id_surat,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><?php echo anchor('pengantar_kp/detail_data/'.$r->id_surat,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('pengantar_kp/cetak/'.$r->id_surat,'<button class="fa fa-print btn btn-warning btn-sm"></button>') ?></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>

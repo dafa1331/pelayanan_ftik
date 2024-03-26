@@ -21,7 +21,7 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="active">
-                                <a href="<?php echo base_url('dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <a href="<?php echo base_url('prodi/pengajuan_layanan')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
 
                             <li><a href="<?php echo base_url('prodi/acc_prodi')?>"><i class="ti-palette"></i> <span>Layanan Masuk</span></a></li>
