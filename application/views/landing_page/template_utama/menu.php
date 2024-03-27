@@ -9,6 +9,7 @@
                   <li><a href="<?php echo base_url('pengguna/kerja_praktik')?>">Pengantar KP</a></li>
                   <li><a href="<?php echo base_url('pengguna/izin_penelitian')?>">Izin Penelitian</a></li>
                   <li><a href="<?php echo base_url('pengguna/alat_ftik')?>">Peminjaman Alat FTIK</a></li>
+                  <li><a href="<?php echo base_url('pengguna/izin_kegiatan')?>">Pengajuan Izin Kegiatan Mahasiswa</a></li>
                 </ul>
               </li>
               <li class="dropdown has-dropdown"><a href="#"><span>Layanan Pegawai</span> <i class="bi bi-chevron-down"></i></a>

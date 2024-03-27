@@ -25,5 +25,11 @@ class Tugas_akhir extends CI_Controller{
         $this->load->view('d_tugas_akhir', $data);
         $this->load->view('template_datatable/footer');
     }
+
+    public function cetak($id){
+        $data['detail'] = $this->m_layanan->detail_ta($id);
+        $data['detail1'] = $this->m_layanan->get_data_nomor_ta($id);
+        $this->load->view('p_surat_izin_penelitian', $data);
+    }
 }
 ?>

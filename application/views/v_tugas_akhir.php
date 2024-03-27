@@ -45,7 +45,7 @@
                                                 <td><?php echo $r->nama_mhs?></td>
                                                 <td><?php echo $r->nim?></td>
                                                 <td><?php echo $r->prodi_mhs?></td>
-                                                <td><?php echo anchor('tugas_akhir/detail_data/'.$r->id_penelitian,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><?php echo anchor('tugas_akhir/detail_data/'.$r->id_penelitian,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('tugas_akhir/cetak/'.$r->id_penelitian,'<button class="fa fa-print btn btn-warning btn-sm"></button>') ?></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>

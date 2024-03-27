@@ -93,6 +93,15 @@ class M_layanan extends CI_Model{
         return $query->result(); // Mengembalikan hasil query sebagai objek array
     }
 
+    public function get_data_nomor_ta($id){
+      $hasil = $this->db->where('id_penelitian', $id)->get('tb_izin_penelitian');
+      if($hasil->num_rows() > 0){
+        return $hasil->result();
+      }else{
+        return false;
+      }
+    }
+
     public function detail_ta($id){
       $this->db->select('*');
       $this->db->join('kebutuhan_data', 'tb_izin_penelitian.id_penelitian = kebutuhan_data.id_penelitian');

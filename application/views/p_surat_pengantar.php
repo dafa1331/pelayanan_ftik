@@ -50,10 +50,14 @@
             width: 100%;
             max-width: 21cm;
             /* Lebar maksimum sesuai ukuran A4 */
-            margin: 0 auto;
-            /* Mengatur halaman ke tengah */
-            padding: 20px;
-            /* Padding konten */
+            margin-left: 1.5cm;
+            /* Sesuaikan dengan margin kiri yang diinginkan */
+            margin-right: 1.5cm;
+            /* Sesuaikan dengan margin kanan yang diinginkan */
+            margin-top: 1cm;
+            /* Sesuaikan dengan margin atas yang diinginkan */
+            margin-bottom: 1cm;
+            /* Sesuaikan dengan margin bawah yang diinginkan */
         }
     </style>
 </head>
