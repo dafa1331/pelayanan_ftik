@@ -32,7 +32,8 @@
     <div class="row g-5">
 
       <div class="col-lg-8">
-          <form action="<?php echo base_url('pengguna/izin_kegiatan/proses_insert')?>" method="post">
+      <?php echo form_open_multipart('pengguna/izin_kegiatan/proses_insert')?>
+          
             <div class="col-lg-20 mt-10 mt-lg-0">
 
               <div class="row gy-2 gx-md-3">
@@ -46,7 +47,7 @@
                 </div>
 
                 <div class="col-md-12 form-group">
-                  <input type="number" name="nim_mhs" class="form-control" placeholder="Masukkan NIM" required>
+                  <input type="text" name="nim_mhs" class="form-control" placeholder="Masukkan NIM" required>
                 </div>
 
                 <div class="col-md-12 form-group">
@@ -105,19 +106,25 @@
                 <div class="col-md-12 form-group">
                   <input type="text" name="jumlah_peserta" class="form-control" placeholder="Jumlah Peserta" required>
                 </div>
+
+                <div class="col-md-12 form-group">
+                  <input type="text" name="lokasi_kegiatan" class="form-control" placeholder="Lokasi Kegiatan" required>
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <input type="file" class="form-control" name="berkas" required>
+                </div>
                 
-                
-              <div class="col-md-6 form-group" required>
                 <button type="submit" class="btn btn-primary">Simpan</button>
-              </div>
+              
 
               </div>
 
 
             </div>
 
-          </form>
-
+          
+          <?php echo form_close();?>
       </div>
 
     </div>
