@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 10:12 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Waktu pembuatan: 27 Mar 2024 pada 08.08
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kebutuhan_data`
+-- Struktur dari tabel `kebutuhan_data`
 --
 
 CREATE TABLE `kebutuhan_data` (
@@ -36,7 +36,7 @@ CREATE TABLE `kebutuhan_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `kebutuhan_data`
+-- Dumping data untuk tabel `kebutuhan_data`
 --
 
 INSERT INTO `kebutuhan_data` (`id_kebutuhan_data`, `tujuan_surat`, `pimpinan_instansi`, `kebutuhan_data`, `id_penelitian`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `kebutuhan_data` (`id_kebutuhan_data`, `tujuan_surat`, `pimpinan_ins
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_alat_ftik`
+-- Struktur dari tabel `tb_alat_ftik`
 --
 
 CREATE TABLE `tb_alat_ftik` (
@@ -56,7 +56,7 @@ CREATE TABLE `tb_alat_ftik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_alat_ftik`
+-- Dumping data untuk tabel `tb_alat_ftik`
 --
 
 INSERT INTO `tb_alat_ftik` (`id_alat`, `nama_alat`, `id_pinjam`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `tb_alat_ftik` (`id_alat`, `nama_alat`, `id_pinjam`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_anggaran`
+-- Struktur dari tabel `tb_anggaran`
 --
 
 CREATE TABLE `tb_anggaran` (
@@ -83,37 +83,7 @@ CREATE TABLE `tb_anggaran` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_anggota_surat_tugas`
---
-
-CREATE TABLE `tb_data_anggota_surat_tugas` (
-  `id_anggota` int(11) NOT NULL,
-  `nama_mhs` varchar(255) NOT NULL,
-  `nim_mhs` varchar(255) NOT NULL,
-  `prodi_mhs` varchar(255) NOT NULL,
-  `alamat_instansi` varchar(255) NOT NULL,
-  `jabatan_pimpinan` varchar(255) NOT NULL,
-  `tujuan_surat` varchar(255) NOT NULL,
-  `tanggal_mulai` date NOT NULL,
-  `tanggal_selesai` date NOT NULL,
-  `no_hp` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `nim_ketua` varchar(255) NOT NULL,
-  `id_surat_tugas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_data_anggota_surat_tugas`
---
-
-INSERT INTO `tb_data_anggota_surat_tugas` (`id_anggota`, `nama_mhs`, `nim_mhs`, `prodi_mhs`, `alamat_instansi`, `jabatan_pimpinan`, `tujuan_surat`, `tanggal_mulai`, `tanggal_selesai`, `no_hp`, `email`, `nim_ketua`, `id_surat_tugas`) VALUES
-(1, 'sad', '1231', 'Teknik Sipil', 'Jalan Xigadung Raya Barat', 'asda', 'PT Zenit Era Utama Servizio', '2024-04-01', '2024-04-02', '0215468464', 'lastiur@email.com', '1231', 1),
-(2, 'adad', '2121', 'Teknik Sipil', 'Jalan Xigadung Raya Barat', 'asda', 'PT Zenit Era Utama Servizio', '2024-04-01', '2024-04-02', '0215468464', 'lastiur@email.com', '1231', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_izin_kegiatan_mahasiswa`
+-- Struktur dari tabel `tb_izin_kegiatan_mahasiswa`
 --
 
 CREATE TABLE `tb_izin_kegiatan_mahasiswa` (
@@ -130,8 +100,6 @@ CREATE TABLE `tb_izin_kegiatan_mahasiswa` (
   `waktu_mulai` time NOT NULL,
   `waktu_selesai` time NOT NULL,
   `jumlah_peserta` varchar(255) NOT NULL,
-  `lokasi_kegiatan` varchar(255) NOT NULL,
-  `berkas` varchar(255) NOT NULL,
   `acc_fakultas` int(11) NOT NULL,
   `acc_prodi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -139,7 +107,7 @@ CREATE TABLE `tb_izin_kegiatan_mahasiswa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_izin_penelitian`
+-- Struktur dari tabel `tb_izin_penelitian`
 --
 
 CREATE TABLE `tb_izin_penelitian` (
@@ -155,7 +123,7 @@ CREATE TABLE `tb_izin_penelitian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_izin_penelitian`
+-- Dumping data untuk tabel `tb_izin_penelitian`
 --
 
 INSERT INTO `tb_izin_penelitian` (`id_penelitian`, `nama_mhs`, `nim`, `prodi_mhs`, `judul_ta`, `no_hp`, `email`, `nomor_surat`, `tanggal_surat`) VALUES
@@ -164,7 +132,7 @@ INSERT INTO `tb_izin_penelitian` (`id_penelitian`, `nama_mhs`, `nim`, `prodi_mhs
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kp`
+-- Struktur dari tabel `tb_kp`
 --
 
 CREATE TABLE `tb_kp` (
@@ -183,7 +151,7 @@ CREATE TABLE `tb_kp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_kp`
+-- Dumping data untuk tabel `tb_kp`
 --
 
 INSERT INTO `tb_kp` (`nim_mhs`, `nama_mhs`, `prodi_mhs`, `alamat_instansi`, `jabatan_pimpinan`, `tujuan_surat`, `tanggal_mulai`, `tanggal_selesai`, `no_hp`, `email`, `nim_ketua`, `id_surat`) VALUES
@@ -195,7 +163,7 @@ INSERT INTO `tb_kp` (`nim_mhs`, `nama_mhs`, `prodi_mhs`, `alamat_instansi`, `jab
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_lampiran_sk`
+-- Struktur dari tabel `tb_lampiran_sk`
 --
 
 CREATE TABLE `tb_lampiran_sk` (
@@ -207,7 +175,7 @@ CREATE TABLE `tb_lampiran_sk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_lampiran_sk`
+-- Dumping data untuk tabel `tb_lampiran_sk`
 --
 
 INSERT INTO `tb_lampiran_sk` (`id_anggota_sk`, `nama_anggota`, `jabatan`, `tugas`, `id_pengajuan_sk`) VALUES
@@ -216,7 +184,7 @@ INSERT INTO `tb_lampiran_sk` (`id_anggota_sk`, `nama_anggota`, `jabatan`, `tugas
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_layanan`
+-- Struktur dari tabel `tb_layanan`
 --
 
 CREATE TABLE `tb_layanan` (
@@ -237,20 +205,20 @@ CREATE TABLE `tb_layanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_layanan`
+-- Dumping data untuk tabel `tb_layanan`
 --
 
 INSERT INTO `tb_layanan` (`nomor`, `nama_pemohon`, `nip_pemohon`, `status_pemohon`, `unit_asal`, `tanggal_pengajuan`, `waktu_pengajuan`, `no_hp`, `keperluan`, `bagian`, `update_at`, `berkas_pendukung`, `slug`, `acc_prodi`) VALUES
-('FTIK0104240003', 'tes6', '12342', 'Pegawai', 'Perencanaan Wilayah dan Kota', '2024-04-01', '08:15:54', '0215468464', 'Pengajuan Surat Tugas Prodi Perencanaan Wilayah dan Kota', 'tata laksana dan teknologi informasi', '2024-04-01', '12342.xlsx', '', 0),
 ('FTIK1503240001', 'nama 1', '123456', 'Mahasiswa', 'Teknik Sipil', '2024-03-15', '04:06:42', '', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-25', '', '', 1),
 ('FTIK1503240002', 'afan', '1517051051', 'Mahasiswa', 'Perencanaan Wilayah dan Kota', '2024-03-15', '04:20:26', '0815475625', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-15', '', '', 0),
 ('FTIK1603240001', 'Afan Darmaji', '1517051051', 'Mahasiswa', 'Perencanaan Wilayah dan Kota', '2024-03-16', '09:08:33', '086526267281', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-16', '', '', 0),
-('FTIK2003240001', 'Maya', '1234', 'Pegawai', 'Teknik Sipil', '2024-03-20', '10:42:05', '09876', 'Pengajuan SK Prodi ', 'tata laksana dan teknologi informasi', '2024-03-25', '', '', 1);
+('FTIK2003240001', 'Maya', '1234', 'Pegawai', 'Teknik Sipil', '2024-03-20', '10:42:05', '09876', 'Pengajuan SK Prodi ', 'tata laksana dan teknologi informasi', '2024-03-25', '', '', 1),
+('FTIK2703240001', 'afan', '123456', 'Mahasiswa', 'Teknik Perkeretaapian', '2024-03-27', '05:21:31', '0215468464', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-27', '', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_nomor_pengantar_kp`
+-- Struktur dari tabel `tb_nomor_pengantar_kp`
 --
 
 CREATE TABLE `tb_nomor_pengantar_kp` (
@@ -266,7 +234,7 @@ CREATE TABLE `tb_nomor_pengantar_kp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_nomor_pengantar_kp`
+-- Dumping data untuk tabel `tb_nomor_pengantar_kp`
 --
 
 INSERT INTO `tb_nomor_pengantar_kp` (`id_surat`, `nim`, `jabatan_pimpinan`, `alamat_instansi`, `tanggal_mulai`, `tanggal_selesai`, `nomor_surat`, `tanggal_surat`, `id_layanan`) VALUES
@@ -276,33 +244,7 @@ INSERT INTO `tb_nomor_pengantar_kp` (`id_surat`, `nim`, `jabatan_pimpinan`, `ala
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_nomor_surat_tugas_kp`
---
-
-CREATE TABLE `tb_nomor_surat_tugas_kp` (
-  `id_surat_tugas_kp` int(11) NOT NULL,
-  `nama_mhs` varchar(255) NOT NULL,
-  `prodi_mhs` varchar(255) NOT NULL,
-  `nim_mhs` varchar(255) NOT NULL,
-  `jabatan_pimpinan` varchar(255) NOT NULL,
-  `alamat_instansi` text NOT NULL,
-  `tanggal_mulai` date NOT NULL,
-  `tanggal_selesai` date NOT NULL,
-  `nomor_surat` varchar(255) NOT NULL,
-  `tanggal_surat` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_nomor_surat_tugas_kp`
---
-
-INSERT INTO `tb_nomor_surat_tugas_kp` (`id_surat_tugas_kp`, `nama_mhs`, `prodi_mhs`, `nim_mhs`, `jabatan_pimpinan`, `alamat_instansi`, `tanggal_mulai`, `tanggal_selesai`, `nomor_surat`, `tanggal_surat`) VALUES
-(1, 'sad', 'Teknik Sipil', '1231', 'asda', 'Jalan Xigadung Raya Barat', '2024-04-01', '2024-04-02', '', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_pegawai`
+-- Struktur dari tabel `tb_pegawai`
 --
 
 CREATE TABLE `tb_pegawai` (
@@ -321,7 +263,7 @@ CREATE TABLE `tb_pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_pegawai`
+-- Dumping data untuk tabel `tb_pegawai`
 --
 
 INSERT INTO `tb_pegawai` (`nip`, `nama`, `nik`, `tanggal_lahir`, `tempat_lahir`, `jenis_kelamin`, `nidn`, `alamat`, `no_hp`, `email`, `npwp`, `foto`) VALUES
@@ -330,7 +272,7 @@ INSERT INTO `tb_pegawai` (`nip`, `nama`, `nik`, `tanggal_lahir`, `tempat_lahir`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pengajuan_kegiatan`
+-- Struktur dari tabel `tb_pengajuan_kegiatan`
 --
 
 CREATE TABLE `tb_pengajuan_kegiatan` (
@@ -347,7 +289,7 @@ CREATE TABLE `tb_pengajuan_kegiatan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pengajuan_sk`
+-- Struktur dari tabel `tb_pengajuan_sk`
 --
 
 CREATE TABLE `tb_pengajuan_sk` (
@@ -364,7 +306,7 @@ CREATE TABLE `tb_pengajuan_sk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_pengajuan_sk`
+-- Dumping data untuk tabel `tb_pengajuan_sk`
 --
 
 INSERT INTO `tb_pengajuan_sk` (`id_pengajuan`, `nama_pengusul`, `nip_pengusul`, `no_hp`, `prodi_pengusul`, `tgl_awal`, `tgl_akhir`, `tanggal_pengajuan`, `judul_sk`, `honor`) VALUES
@@ -373,33 +315,7 @@ INSERT INTO `tb_pengajuan_sk` (`id_pengajuan`, `nama_pengusul`, `nip_pengusul`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pengajuan_surat_tugas_prodi`
---
-
-CREATE TABLE `tb_pengajuan_surat_tugas_prodi` (
-  `id_surat_tugas` int(11) NOT NULL,
-  `nama_pengusul` varchar(255) NOT NULL,
-  `nip_pengusul` varchar(255) NOT NULL,
-  `prodi_pengusul` varchar(255) NOT NULL,
-  `no_hp` varchar(255) NOT NULL,
-  `kegiatan` varchar(255) NOT NULL,
-  `tanggal_mulai_kegiatan` date NOT NULL,
-  `tanggal_selesai_kegiatan` date NOT NULL,
-  `tanggal_pengajuan` date NOT NULL,
-  `lampiran` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_pengajuan_surat_tugas_prodi`
---
-
-INSERT INTO `tb_pengajuan_surat_tugas_prodi` (`id_surat_tugas`, `nama_pengusul`, `nip_pengusul`, `prodi_pengusul`, `no_hp`, `kegiatan`, `tanggal_mulai_kegiatan`, `tanggal_selesai_kegiatan`, `tanggal_pengajuan`, `lampiran`) VALUES
-(9, 'tes6', '12342', 'Perencanaan Wilayah dan Kota', '0215468464', 'dsdasd', '2024-04-02', '2024-04-09', '2024-04-01', '12342.xlsx');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_pinjam_alat`
+-- Struktur dari tabel `tb_pinjam_alat`
 --
 
 CREATE TABLE `tb_pinjam_alat` (
@@ -418,7 +334,7 @@ CREATE TABLE `tb_pinjam_alat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_pinjam_alat`
+-- Dumping data untuk tabel `tb_pinjam_alat`
 --
 
 INSERT INTO `tb_pinjam_alat` (`id_pinjam`, `nama_mhs`, `nim_mhs`, `prodi`, `no_hp`, `keperluan`, `tanggal_pinjam`, `waktu_pinjam`, `tanggal_kembali`, `waktu_kembali`, `kondisi`, `status_pengembalian`) VALUES
@@ -428,7 +344,7 @@ INSERT INTO `tb_pinjam_alat` (`id_pinjam`, `nama_mhs`, `nim_mhs`, `prodi`, `no_h
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_prodi`
+-- Struktur dari tabel `tb_prodi`
 --
 
 CREATE TABLE `tb_prodi` (
@@ -441,7 +357,7 @@ CREATE TABLE `tb_prodi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -455,7 +371,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `bagian`, `id_prodi`, `level`) VALUES
@@ -476,197 +392,161 @@ INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `bagian`,
 --
 
 --
--- Indexes for table `kebutuhan_data`
+-- Indeks untuk tabel `kebutuhan_data`
 --
 ALTER TABLE `kebutuhan_data`
   ADD PRIMARY KEY (`id_kebutuhan_data`);
 
 --
--- Indexes for table `tb_alat_ftik`
+-- Indeks untuk tabel `tb_alat_ftik`
 --
 ALTER TABLE `tb_alat_ftik`
   ADD PRIMARY KEY (`id_alat`);
 
 --
--- Indexes for table `tb_anggaran`
+-- Indeks untuk tabel `tb_anggaran`
 --
 ALTER TABLE `tb_anggaran`
   ADD PRIMARY KEY (`id_anggaran`);
 
 --
--- Indexes for table `tb_data_anggota_surat_tugas`
---
-ALTER TABLE `tb_data_anggota_surat_tugas`
-  ADD PRIMARY KEY (`id_anggota`);
-
---
--- Indexes for table `tb_izin_kegiatan_mahasiswa`
+-- Indeks untuk tabel `tb_izin_kegiatan_mahasiswa`
 --
 ALTER TABLE `tb_izin_kegiatan_mahasiswa`
   ADD PRIMARY KEY (`id_izin_mahasiswa`);
 
 --
--- Indexes for table `tb_izin_penelitian`
+-- Indeks untuk tabel `tb_izin_penelitian`
 --
 ALTER TABLE `tb_izin_penelitian`
   ADD PRIMARY KEY (`id_penelitian`);
 
 --
--- Indexes for table `tb_kp`
+-- Indeks untuk tabel `tb_kp`
 --
 ALTER TABLE `tb_kp`
   ADD PRIMARY KEY (`nim_mhs`);
 
 --
--- Indexes for table `tb_lampiran_sk`
+-- Indeks untuk tabel `tb_lampiran_sk`
 --
 ALTER TABLE `tb_lampiran_sk`
   ADD PRIMARY KEY (`id_anggota_sk`);
 
 --
--- Indexes for table `tb_layanan`
+-- Indeks untuk tabel `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
   ADD PRIMARY KEY (`nomor`);
 
 --
--- Indexes for table `tb_nomor_pengantar_kp`
+-- Indeks untuk tabel `tb_nomor_pengantar_kp`
 --
 ALTER TABLE `tb_nomor_pengantar_kp`
   ADD PRIMARY KEY (`id_surat`);
 
 --
--- Indexes for table `tb_nomor_surat_tugas_kp`
---
-ALTER TABLE `tb_nomor_surat_tugas_kp`
-  ADD PRIMARY KEY (`id_surat_tugas_kp`);
-
---
--- Indexes for table `tb_pegawai`
+-- Indeks untuk tabel `tb_pegawai`
 --
 ALTER TABLE `tb_pegawai`
   ADD PRIMARY KEY (`nip`);
 
 --
--- Indexes for table `tb_pengajuan_kegiatan`
+-- Indeks untuk tabel `tb_pengajuan_kegiatan`
 --
 ALTER TABLE `tb_pengajuan_kegiatan`
   ADD PRIMARY KEY (`id_pengajuan`);
 
 --
--- Indexes for table `tb_pengajuan_sk`
+-- Indeks untuk tabel `tb_pengajuan_sk`
 --
 ALTER TABLE `tb_pengajuan_sk`
   ADD PRIMARY KEY (`id_pengajuan`);
 
 --
--- Indexes for table `tb_pengajuan_surat_tugas_prodi`
---
-ALTER TABLE `tb_pengajuan_surat_tugas_prodi`
-  ADD PRIMARY KEY (`id_surat_tugas`);
-
---
--- Indexes for table `tb_pinjam_alat`
+-- Indeks untuk tabel `tb_pinjam_alat`
 --
 ALTER TABLE `tb_pinjam_alat`
   ADD PRIMARY KEY (`id_pinjam`);
 
 --
--- Indexes for table `tb_prodi`
+-- Indeks untuk tabel `tb_prodi`
 --
 ALTER TABLE `tb_prodi`
   ADD PRIMARY KEY (`id_prodi`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `kebutuhan_data`
+-- AUTO_INCREMENT untuk tabel `kebutuhan_data`
 --
 ALTER TABLE `kebutuhan_data`
   MODIFY `id_kebutuhan_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `tb_alat_ftik`
+-- AUTO_INCREMENT untuk tabel `tb_alat_ftik`
 --
 ALTER TABLE `tb_alat_ftik`
   MODIFY `id_alat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_anggaran`
+-- AUTO_INCREMENT untuk tabel `tb_anggaran`
 --
 ALTER TABLE `tb_anggaran`
   MODIFY `id_anggaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_data_anggota_surat_tugas`
---
-ALTER TABLE `tb_data_anggota_surat_tugas`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tb_izin_kegiatan_mahasiswa`
+-- AUTO_INCREMENT untuk tabel `tb_izin_kegiatan_mahasiswa`
 --
 ALTER TABLE `tb_izin_kegiatan_mahasiswa`
-  MODIFY `id_izin_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_izin_mahasiswa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_izin_penelitian`
+-- AUTO_INCREMENT untuk tabel `tb_izin_penelitian`
 --
 ALTER TABLE `tb_izin_penelitian`
   MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `tb_lampiran_sk`
+-- AUTO_INCREMENT untuk tabel `tb_lampiran_sk`
 --
 ALTER TABLE `tb_lampiran_sk`
   MODIFY `id_anggota_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_nomor_pengantar_kp`
+-- AUTO_INCREMENT untuk tabel `tb_nomor_pengantar_kp`
 --
 ALTER TABLE `tb_nomor_pengantar_kp`
   MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `tb_nomor_surat_tugas_kp`
---
-ALTER TABLE `tb_nomor_surat_tugas_kp`
-  MODIFY `id_surat_tugas_kp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tb_pengajuan_kegiatan`
+-- AUTO_INCREMENT untuk tabel `tb_pengajuan_kegiatan`
 --
 ALTER TABLE `tb_pengajuan_kegiatan`
   MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_pengajuan_sk`
+-- AUTO_INCREMENT untuk tabel `tb_pengajuan_sk`
 --
 ALTER TABLE `tb_pengajuan_sk`
   MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_pengajuan_surat_tugas_prodi`
---
-ALTER TABLE `tb_pengajuan_surat_tugas_prodi`
-  MODIFY `id_surat_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `tb_prodi`
+-- AUTO_INCREMENT untuk tabel `tb_prodi`
 --
 ALTER TABLE `tb_prodi`
   MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
