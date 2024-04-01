@@ -223,6 +223,33 @@ class M_layanan extends CI_Model{
       $query = $this->db->get();
       return $query->result();
     }
+
+    public function get_data_surat_tugas() {
+
+      $level = $this->session->userdata('username');
+
+      $this->db->select('*');
+      $this->db->from('tb_pengajuan_surat_tugas_prodi');
+      $this->db->join('tb_user', 'tb_pengajuan_surat_tugas_prodi.prodi_pengusul = tb_user.bagian');
+      $this->db->where('tb_user.username', $level);
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get();
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+    }
+
+    public function delete_data($id) {
+      // Hapus data dari tabel1
+      $this->db->where('nomor', $id);
+      $this->db->delete('tb_layanan');
+
+      // Hapus data dari tabel2
+      // $this->db->where('id_', $id);
+      // $this->db->delete('table2');
+
+      // Tambahkan tabel lain jika perlu
+  }
+
+
   
 }
 ?>

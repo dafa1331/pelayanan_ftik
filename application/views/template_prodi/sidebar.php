@@ -31,7 +31,7 @@
                                 <ul class="collapse">
                                     <li><a href="<?php echo base_url('prodi/pengajuan_sk')?>">Pengajuan SK</a></li>
                                     <li><a href="<?php echo base_url('prodi/pengajuan_rab')?>">Pengajuan RAB</a></li>
-                                    <li><a href="#"><i>Pengajuan Surat Tugas (coming soon)</i></a></li>
+                                    <li><a href="<?php echo base_url('prodi/pengajuan_surat_tugas')?>">Pengajuan Surat Tugas</a></li>
                                 </ul>
                             </li>
                             

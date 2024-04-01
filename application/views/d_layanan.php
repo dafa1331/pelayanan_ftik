@@ -87,7 +87,7 @@
   <tr>
     <td width="200 px">Berkas Pendukung (optional)</td>
     <td width="10 px">:</td>
-    <td><a href="<?php echo base_url('assets/berkas_pendukung/'.$dt->nip_pemohon.'.pdf'); ?>" download></td>
+    <td> <?php echo anchor('assets/berkas_pendukung/'.$dt->berkas_pendukung,'<button class=" btn btn-primary btn-sm">download</button>') ?></td>
   </tr>
 <?php endforeach?>
 </table>

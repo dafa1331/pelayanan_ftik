@@ -10,6 +10,16 @@
                   <li><a href="<?php echo base_url('pengguna/izin_penelitian')?>">Izin Penelitian</a></li>
                   <li><a href="<?php echo base_url('pengguna/alat_ftik')?>">Peminjaman Alat FTIK</a></li>
                   <li><a href="<?php echo base_url('pengguna/izin_kegiatan')?>">Pengajuan Izin Kegiatan Mahasiswa</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Format-Dispensasi-Mahasiswa.docx">Permohonan Dispensasi Mahasiswa</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Format-Surat-Penyataan-Penghapusan-Nilai.docx">Permohonan Penghapusan Nilai</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Form-Translate-Ijazah.docx">Formulir Translate Ijazah</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Form-Undur-Diri.docx">Formulir Undur Diri</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Format-Turnitirn.docx">Formulir Cek Turnitirn</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Formulir-Peminjaman-Alat-Lab.doc">Formulir Peminjaman Alat Lab</a></li>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2024/01/Format-Perubahan-Nilai-Mahasiswa.docx">Formulir Perubahan Nilai Mahasiswa</a></li>
+                  
+                  
+                  
                 </ul>
               </li>
               <li class="dropdown has-dropdown"><a href="#"><span>Layanan Pegawai</span> <i class="bi bi-chevron-down"></i></a>

@@ -5,10 +5,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Halaman Layanan</h4>
+                            <h4 class="page-title pull-left">Halaman Surat Tugas / Surat Keterangan</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="<?php echo base_url('dashboard')?>">Home</a></li>
-                                <li><span>Layanan</span></li>
+                                <li><a href="<?php echo base_url('prodi/pengajuan_layanan')?>">Home</a></li>
+                                <li><span>Pengajuan Surat Tugas</span></li>
                             </ul>
                         </div>
                     </div>
@@ -21,8 +21,8 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Data Layanan</h4>
-                                <?php echo anchor('layanan/insert','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
+                                <h4 class="header-title">Data Surat Tugas / Surat Keterangan</h4>
+                                <?php echo anchor('prodi/pengajuan_surat_tugas/insert','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
                                 <br>
                                 <br>
                                 <div class="data-tables datatable-primary">
@@ -30,20 +30,24 @@
                                         <thead class="text-capitalize">
                                             <tr>
                                                 <th width="100px">Nomor</th>
-                                                <th>Nama Pemohon</th>
-                                                <th>Asal Pemohon</th>
-                                                <th>Keperluan</th>
+                                                <th>Nama Pengusul</th>
+                                                <th>Kegiatan</th>
+                                                <th>Tanggal Mulai</th>
+                                                <th>Tanggal Selesai</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($result as $r) :?>
+                                            <?php 
+                                            $no = 1;
+                                            foreach($surat_tugas as $s) :?>
                                             <tr>
-                                                <td><?php echo $r->nomor?></td>
-                                                <td><?php echo $r->nama_pemohon?></td>
-                                                <td><?php echo $r->unit_asal?></td>
-                                                <td><?php echo $r->keperluan?></td>
-                                                <td><?php echo anchor('layanan/detail_data/'.$r->nomor,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('layanan/delete_data/'.$r->nomor,'<button class="fa fa-trash btn btn-danger btn-sm"></button>') ?></td>
+                                                <td><?php echo $no++?></td>
+                                                <td><?php echo $s->nama_pengusul?></td>
+                                                <td><?php echo $s->kegiatan?></td>
+                                                <td><?php echo $s->tanggal_mulai_kegiatan?></td>
+                                                <td><?php echo $s->tanggal_selesai_kegiatan?></td>
+                                                <td><?php echo anchor('prodi/pengajuan_surat_tugas/detail_data/'.$s->id_surat_tugas,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>

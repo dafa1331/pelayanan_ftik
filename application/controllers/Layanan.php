@@ -48,7 +48,7 @@ class Layanan extends CI_Controller{
             echo "gagal upload";
             // redirect('pegawai/insert');
             }else{
-            $foto = $this->upload->data('file_name');
+            $berkas_pendukung = $this->upload->data('file_name');
             }
         }
 
@@ -79,8 +79,10 @@ class Layanan extends CI_Controller{
       $this->load->view('template_datatable/footer');
     }
 
-    public function delete_data(){
-        //tulis fungsi disini
+    public function delete_data($id){
+       
+        $this->m_layanan->delete_data($id);
+        redirect('layanan'); // 
     }
 
 

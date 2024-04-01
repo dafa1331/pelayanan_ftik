@@ -38,6 +38,12 @@
 
               <div class="row gy-2 gx-md-3">
 
+              <div class="col-md-12 form-group">
+
+              <a class="btn btn-primary" href="https://ftik.itera.ac.id/wp-content/uploads/2024/04/izin-kegiatan-new-1-1-2-11-2-2.docx">Download Template Surat izin Kegiatan</a>
+
+              </div>
+
                 <div class="col-md-12 form-group">
                   <input type="text" name="nomor" class="form-control" value="<?php echo $nomor?>" placeholder="Masukkan Nomor Layanan" required readonly>
                 </div>
@@ -112,6 +118,7 @@
                 </div>
 
                 <div class="col-md-12 form-group">
+                  <label for="">Upload surat izin yang sudah di tanda tangani</label>
                     <input type="file" class="form-control" name="berkas" required>
                 </div>
                 
