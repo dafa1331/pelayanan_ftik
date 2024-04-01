@@ -17,9 +17,7 @@
                   <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Format-Turnitirn.docx">Formulir Cek Turnitirn</a></li>
                   <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Formulir-Peminjaman-Alat-Lab.doc">Formulir Peminjaman Alat Lab</a></li>
                   <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2024/01/Format-Perubahan-Nilai-Mahasiswa.docx">Formulir Perubahan Nilai Mahasiswa</a></li>
-                  
-                  
-                  
+
                 </ul>
               </li>
               <li class="dropdown has-dropdown"><a href="#"><span>Layanan Pegawai</span> <i class="bi bi-chevron-down"></i></a>
