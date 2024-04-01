@@ -35,6 +35,7 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-user"></i><span>Layanan Mahasiswa</span></a>
                                 <ul class="collapse">
                                     <li><a href="<?php echo base_url('pengantar_kp')?>">Pengantar Kerja Praktik</a></li>
+                                    <li><a href="<?php echo base_url('Surat_tugas_kp')?>">Surat Tugas Kerja Praktik</a></li>
                                     <li><a href="<?php echo base_url('tugas_akhir')?>">Izin Penelitian</a></li>
                                     <li><a href="<?php echo base_url('pinjam')?>">Peminjaman Alat</a></li>
                                 </ul>

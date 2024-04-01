@@ -249,6 +249,42 @@ class M_layanan extends CI_Model{
       // Tambahkan tabel lain jika perlu
   }
 
+  public function get_data_surat_tugas_kp(){
+      $query = $this->db->get('tb_nomor_surat_tugas_kp');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+  }
+
+  public function detail_surat_tugas_kp($id){
+    $this->db->select('*');
+    $this->db->join('tb_data_anggota_surat_tugas', 'tb_nomor_surat_tugas_kp.nim_mhs = tb_data_anggota_surat_tugas.nim_ketua');
+    $this->db->from('tb_nomor_surat_tugas_kp');
+    $this->db->where('tb_nomor_surat_tugas_kp.id_surat_tugas_kp', $id);
+
+    $query = $this->db->get();
+    return $query->result();
+  }
+
+  public function detail_surat_tugas_kp1($id){
+    $this->db->select('*');
+    $this->db->join('tb_data_anggota_surat_tugas', 'tb_nomor_surat_tugas_kp.nim_mhs = tb_data_anggota_surat_tugas.nim_ketua');
+    $this->db->from('tb_nomor_surat_tugas_kp');
+    $this->db->where('tb_nomor_surat_tugas_kp.id_surat_tugas_kp', $id);
+
+    $query = $this->db->get();
+    return $query->row();
+    }
+
+    public function get_data_nomor_surat_tugas($id){
+      $hasil = $this->db->where('id_surat_tugas_kp', $id)->get('tb_nomor_surat_tugas_kp');
+      if($hasil->num_rows() > 0){
+        return $hasil->result();
+      }else{
+        return false;
+      }
+    }
+
+
+
 
   
 }

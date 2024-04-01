@@ -7,6 +7,7 @@
               <li class="dropdown has-dropdown"><a href="#"><span>Layanan Mahasiswa</span> <i class="bi bi-chevron-down"></i></a>
                 <ul class="dd-box-shadow">
                   <li><a href="<?php echo base_url('pengguna/kerja_praktik')?>">Pengantar KP</a></li>
+                  <li><a href="<?php echo base_url('pengguna/kerja_praktik/surat_tugas')?>">Surat Tugas KP</a></li>
                   <li><a href="<?php echo base_url('pengguna/izin_penelitian')?>">Izin Penelitian</a></li>
                   <li><a href="<?php echo base_url('pengguna/alat_ftik')?>">Peminjaman Alat FTIK</a></li>
                   <li><a href="<?php echo base_url('pengguna/izin_kegiatan')?>">Pengajuan Izin Kegiatan Mahasiswa</a></li>
