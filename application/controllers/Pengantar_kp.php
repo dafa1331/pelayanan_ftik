@@ -51,6 +51,11 @@ class Pengantar_kp extends CI_Controller{
   public function cetak($id){
     $data['detail'] = $this->m_layanan->detail_kp($id);
     $data['detail2'] = $this->m_layanan->get_data_nomor($id);
+
+    // $this->load->library('pdflib');
+    // $this->pdflib->setPaper('A4', 'potrait');
+    // $this->pdflib->setFileName('Nama_file.pdf');
+    // $this->pdflib->LoadView('p_surat_pengantar', $data);
     $cetak = $this->load->view('p_surat_pengantar', $data);
 
     

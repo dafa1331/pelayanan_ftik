@@ -10,9 +10,10 @@ class Dashboard extends CI_Controller{
 }
 
   public function index(){
+    $data['all'] = $this->m_layanan->hitung_layanan_all();
     $this->load->view('template_datatable/header');
     $this->load->view('template/sidebar');
-    $this->load->view('utama');
+    $this->load->view('utama', $data);
     $this->load->view('template_datatable/footer');
   }
 }

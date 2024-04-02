@@ -78,5 +78,6 @@ public function index(){
     $this->load->view('template_datatable/footer');
   }
 
+  
 }
  ?>

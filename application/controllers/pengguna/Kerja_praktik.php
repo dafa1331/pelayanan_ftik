@@ -119,6 +119,7 @@ class Kerja_praktik extends CI_Controller{
     $tanggal_selesai = $this->input->post('tanggal_selesai');
     $no_hp = $this->input->post('no_hp');
     $email = $this->input->post('email');
+    $nomor_balasan = $this->input->post('nomor_balasan');
     $i = 0;
     $nama_mhs = $this->input->post('nama_mhs');
     $nim_mhs = $this->input->post('nim_mhs');
@@ -145,6 +146,7 @@ class Kerja_praktik extends CI_Controller{
           'alamat_instansi' => $alamat_instansi,
           'jabatan_pimpinan' => $jabatan_pimpinan,
           'tujuan_surat' => $tujuan_surat,
+          'nomor_balasan' => $nomor_balasan,
           'tanggal_mulai' => $tanggal_mulai,
           'tanggal_selesai' => $tanggal_selesai,
           'no_hp' => $no_hp,

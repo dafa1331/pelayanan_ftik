@@ -76,6 +76,10 @@
                   <input type="date" name="tanggal_selesai" class="form-control" placeholder="tanggal mulai KP">
                 </div>
 
+                <div class="col-md-12 form-group" required>
+                  <input type="text" name="nomor_balasan" class="form-control" placeholder="Nomor Balasan dari Instansi yang dituju">
+                </div>
+
                 <div class="col-md-6 form-group" required>
                   <input type="text" name="no_hp" class="form-control" placeholder="Masukkan No Hp / WA">
                 </div>

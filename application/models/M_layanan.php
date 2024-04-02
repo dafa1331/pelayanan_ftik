@@ -283,6 +283,25 @@ class M_layanan extends CI_Model{
       }
     }
 
+    function hitung_layanan_all(){
+      $query = $this->db->get('tb_layanan')->num_rows();
+      return $query;
+    }
+
+    public function view_all(){
+      return $this->db->get('tb_layanan')->result(); // Tampilkan semua data transaksi
+    }
+
+    public function view_by_date($tgl_awal, $tgl_akhir){
+      $tgl_awal = $this->db->escape($tgl_awal);
+      $tgl_akhir = $this->db->escape($tgl_akhir);
+
+      $this->db->where('DATE(tanggal_pengajuan) BETWEEN '.$tgl_awal.' AND '.$tgl_akhir); // Tambahkan where tanggal nya
+
+      return $this->db->get('tb_layanan')->result();// Tampilkan data transaksi sesuai tanggal yang diinput oleh user pada filter
+    }
+
+
 
 
 

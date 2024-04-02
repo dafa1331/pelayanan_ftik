@@ -28,6 +28,29 @@ class Surat_tugas_kp extends CI_Controller{
         $this->load->view('template_datatable/footer');
     }
 
+    public function tambah_nomor(){
+        $id = $this->input->post('id_surat_tugas_kp');
+        $nomor_surat = $this->input->post('nomor_surat');
+        $tanggal_surat = $this->input->post('tanggal_surat');
     
+        $data = array(
+          'nomor_surat' => $nomor_surat,
+          'tanggal_surat' => $tanggal_surat,
+        );
+    
+        $where = array(
+          'id_surat_tugas_kp' => $id,
+        );
+    
+        $this->m_layanan->update($where, $data, 'tb_nomor_surat_tugas_kp');
+        
+        redirect('surat_tugas_kp');
+      }
+
+      public function cetak_surat($id){
+        $data['detail'] = $this->m_layanan->detail_surat_tugas_kp($id);
+        $data['detail2'] = $this->m_layanan->get_data_nomor_surat_tugas($id);
+        $cetak = $this->load->view('p_surat_tugas', $data);
+      }
 }
 ?>

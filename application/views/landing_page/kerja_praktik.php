@@ -112,24 +112,14 @@
                       </select>
                     </div> -->
 
-                <div class="form-group" id="form1" required>
-                  <br>
-                  <h6>
-                    <center>Anggota Kelompok
-                  </h6>
-                  <table class="table table-bordered" id="tableLoop" width="100%">
-                    <thead>
-                      <tr>
-                        <th class="text-center" width="10%">No</th>
-                        <th width="30%">Nama</th>
-                        <th width="30%">NIM</th>
-                        <th class="text-center" width="10%"><button class="btn btn-success btn-block" id="BarisBaru"><i
-                              class="bi bi-plus"></i></button></th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
+                    <div id="formContainer" class="col-md-12">
+                      <div class="row gy-2 gx-md-3">
+
+                      </div>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-success" id="addForm">Tambahkan Nama</button>
+                    </div>
 
                 <div class="col-md-6 form-group" required>
                   <button type="submit" class="btn btn-primary">Simpan</button>
@@ -159,96 +149,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-  $(document).ready(function () {
-    for (B = 1; B <= 1; B++) {
-      Barisbaru();
-    }
-    $('#BarisBaru').click(function (e) {
-      e.preventDefault();
-      Barisbaru();
-    });
+        $(document).ready(function(){
+            // Fungsi untuk menambahkan form baru
+            $("#addForm").click(function(){
+                var newForm = '<div class="col-md-12"><div class="row gy-2 gx-md-3"><label>Detail Instansi</label> <div class="col-md-6 form-group">  <input type="text" class="form-control" name="nama_anggota[]" placeholder="Nama Mahasiswa"></div> <div class="col-md-6 form-group"><input type="text" class="form-control" name="nim_anggota[]" placeholder="Masukkan nim"></div> </div><button class="removeForm btn btn-danger">Hapus</button></div>';
+                
+                $("#formContainer").append(newForm);
 
-    $("tableLoop tbody").find('input[type=text]').filter(':visible:first').focus();
-  });
+            });
 
-  function Barisbaru() {
-    $(document).ready(function () {
-      $("[data-toggle='tooltip']").tooltip();
-    });
-    var Nomor = $("#tableLoop tbody tr").length + 1;
-    var Baris = '<tr>';
-    Baris += '<td style="width= 5%" class="text-center">' + Nomor + '</td>';
-    Baris += '<td style="width= 40%">';
-    Baris += '<input style="width= 40%" type="text" name="nama_anggota[]" class="form-control" placeholder="Nama Lengkap">';
-    Baris += '</td>';
-    Baris += '<td>';
-    Baris += '<input type="text" name="nim_anggota[]" class="form-control" placeholder="NIM">';
-    Baris += '</td>';
-    Baris += '<td style="width= 5%" class="text-center">';
-    Baris += '<a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus Baris" id="HapusBaris"><i class="bi bi-trash3-fill"></i></a>';
-    Baris += '</td>';
-    Baris += '</tr>';
+            // Fungsi untuk menghapus form
+            $(document).on("click", ".removeForm", function(){
+                $(this).parent().remove();
+            });
 
-    $("#tableLoop tbody").append(Baris);
-    $("#tableLoop tbody tr").each(function () {
-      $(this).find('td:nth-child(2) input').focus();
-    });
-
-  }
-
-  $(document).on('click', '#HapusBaris', function (e) {
-    e.preventDefault();
-    var Nomor = 1;
-    $(this).parent().parent().remove();
-    $('tableLoop tbody tr').each(function () {
-      $(this).find('td:nth-child(1)').html(Nomor);
-      Nomor++;
-    });
-  });
-
-  $(document).ready(function () {
-    $('#SimpanData').submit(function (e) {
-      e.preventDefault();
-      biodata();
-    });
-  });
-
-  function biodata() {
-    $.ajax({
-      url: $("#SimpanData").attr('action'),
-      type: 'post',
-      cache: false,
-      dataType: "json",
-      data: $("#SimpanData").serialize(),
-      success: function (data) {
-        if (data.success == true) {
-          $('.first_name').val('');
-          $('.last_name').val('');
-          $('#notif').fadeIn(800, function () {
-            $("#notif").html(data.notif).fadeOut(5000).delay(800);
-          });
-        }
-        else {
-          $('#notif').html('<div class="alert alert-danger">Data Gagal Disimpan</div>')
-        }
-      },
-
-      error: function (error) {
-        alert(error);
-      }
-
-    });
-  }
-</script>
-<script>
-  $(document).ready(function () {
-    $("#selectOption").change(function () {
-      var selectedValue = $(this).val();
-      if (selectedValue == 1) {
-        $("#form1").show();
-      } else {
-        $("#form1").hide();
-      }
-    });
-  });
-</script>
+        });
+    </script>
