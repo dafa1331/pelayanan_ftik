@@ -4,8 +4,8 @@
           <li><a href="<?php echo base_url()?>" class="active">Home</a></li>
           <li class="dropdown has-dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="dd-box-shadow">
-              <li class="dropdown has-dropdown"><a href="#"><span>Layanan Mahasiswa</span> <i class="bi bi-chevron-down"></i></a>
-                <ul class="dd-box-shadow">
+              <li class="dropdown has-dropdown"><a href="<?php echo base_url('pengguna/layanan_mahasiswa')?>"><span>Layanan Mahasiswa</span> </a>
+                <!-- <ul class="dd-box-shadow">
                   <li><a href="<?php echo base_url('pengguna/kerja_praktik')?>">Pengantar KP</a></li>
                   <li><a href="<?php echo base_url('pengguna/kerja_praktik/surat_tugas')?>">Surat Tugas KP</a></li>
                   <li><a href="<?php echo base_url('pengguna/izin_penelitian')?>">Izin Penelitian</a></li>
@@ -18,14 +18,14 @@
                   <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Format-Turnitirn.docx">Formulir Cek Turnitirn</a></li>
                   <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2023/12/Formulir-Peminjaman-Alat-Lab.doc">Formulir Peminjaman Alat Lab</a></li>
                   <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2024/01/Format-Perubahan-Nilai-Mahasiswa.docx">Formulir Perubahan Nilai Mahasiswa</a></li>
-
-                </ul>
+                  <li><a href="https://ftik.itera.ac.id/wp-content/uploads/2024/04/FORM-IZIN-PENELITIAN-DAN-PENGGUNAAN-ALAT-LAB.docx">Formulir Peminjaman dan Penggunaan Alat Lab</a></li>
+                </ul> -->
               </li>
-              <li class="dropdown has-dropdown"><a href="#"><span>Layanan Pegawai</span> <i class="bi bi-chevron-down"></i></a>
-                <ul class="dd-box-shadow">
+              <li class="dropdown has-dropdown"><a href="<?php echo base_url('pengguna/layanan_pegawai')?>"><span>Layanan Pegawai</span></a>
+                <!-- <ul class="dd-box-shadow">
                   <li><a href="#">Form Cuti Dalam Kota</a></li>
                   <li><a href="#">Form Cuti Luar Kota</a></li>
-                </ul>
+                </ul> -->
               </li>
             </ul>
           </li>
