@@ -84,7 +84,7 @@ class Pengajuan_sk extends CI_Controller{
             'keperluan' => 'Pengajuan SK Prodi '.$prodi_pengusul,
             'bagian' => 'tata laksana dan teknologi informasi',
             'update_at' => date("Y-m-d"),
-      
+            'acc_prodi' => 1,
           );
       
           $id_layanan = $this->m_layanan->simpan_data_layanan($layanan, 'tb_layanan');

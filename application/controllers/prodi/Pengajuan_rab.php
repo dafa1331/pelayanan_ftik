@@ -86,6 +86,7 @@ class Pengajuan_rab extends CI_Controller{
             'keperluan' => 'Pengajuan RAB Prodi '.$prodi,
             'bagian' => 'keuangan dan perencanaan',
             'update_at' => date("Y-m-d"),
+            'acc_prodi' => 1,
       
           );
       

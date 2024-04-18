@@ -26,7 +26,7 @@ class Register extends CI_Controller{
                 'username' => $this->input->post('username'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
                 'bagian' => $this->input->post('bagian'),
-                'level' => 'mahasiswa',
+                'level' => 'pimpinan',
                 'id_prodi' => 12,
             );
 

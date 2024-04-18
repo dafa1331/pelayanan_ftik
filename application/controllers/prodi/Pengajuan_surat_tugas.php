@@ -83,6 +83,7 @@ class Pengajuan_surat_tugas extends CI_Controller
                 'bagian' => 'tata laksana dan teknologi informasi',
                 'update_at' => date("Y-m-d"),
                 'berkas_pendukung' => $lampiran,
+                'acc_prodi' => 1,
             );
 
             $simpan_layanan = $this->m_layanan->simpan_data_layanan($layanan, 'tb_layanan');

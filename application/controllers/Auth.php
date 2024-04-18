@@ -32,6 +32,8 @@ class Auth extends CI_Controller{
                 redirect('dashboard');
             } else if ($user->level == 'prodi'){
                 redirect('prodi/pengajuan_layanan');
+            } else if ($user->level == 'pimpinan'){
+                redirect('pimpinan/dashboard');
             } else {
                 redirect('auth');
             }

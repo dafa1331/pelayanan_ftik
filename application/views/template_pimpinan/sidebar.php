@@ -21,33 +21,12 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="active">
-                                <a href="<?php echo base_url('dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <a href="<?php echo base_url('pimpinan/dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
-                            <li><a href="<?php echo base_url('layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Layanan</span></a></li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Data Pegawai</span></a>
-                                <ul class="collapse">
-                                    <li><a href="<?php echo base_url('pegawai')?>">Aktif</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Tubel</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-user"></i><span>Layanan Mahasiswa</span></a>
-                                <ul class="collapse">
-                                    <li><a href="<?php echo base_url('pengantar_kp')?>">Pengantar Kerja Praktik</a></li>
-                                    <li><a href="<?php echo base_url('Surat_tugas_kp')?>">Surat Tugas Kerja Praktik</a></li>
-                                    <li><a href="<?php echo base_url('tugas_akhir')?>">Izin Penelitian</a></li>
-                                    <li><a href="<?php echo base_url('pinjam')?>">Peminjaman Alat</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="<?php echo base_url('user')?>"><i class="fa fa-users"></i> <span>User</span></a></li>
-                            <li><a href="<?php echo base_url('backup/backup_db')?>"><i class="fa fa-database"></i> <span>backup database</span></a></li>
-                            <li><a href="<?php echo base_url('layanan/rekap_layanan')?>"><i class="fa fa-file-text-o"></i> <span>Rekap Layanan</span></a></li>
-                            
-                            
-                           
-                           
-                           
+                            <li><a href="<?php echo base_url('pimpinan/rekap_layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Rekap Layanan</span></a></li>
+                            <li><a href="<?php echo base_url('pimpinan/pengajuan_keuangan')?>"><i class="fa fa-credit-card"></i> <span>Pengajuan Keuangan</span></a></li>
+                            <li><a href="<?php echo base_url('backup/backup_db')?>"><i class="ti-map-alt"></i> <span>backup database</span></a></li>
+                            <li><a href="<?php echo base_url('layanan/rekap_layanan')?>"><i class="ti-map-alt"></i> <span>Rekap Layanan</span></a></li>
                         </ul>
                     </nav>
                 </div>

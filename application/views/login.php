@@ -69,7 +69,7 @@
                             <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <!-- <p class="text-muted">Belum memiliki Akun ? <a href="<?php echo base_url('register')?>">Register</a></p> -->
+                            <p class="text-muted">Belum memiliki Akun ? <a href="<?php echo base_url('register')?>">Register</a></p>
                             <p class="text-muted">Kembali ke halaman utama <a href="<?php echo base_url('welcome')?>">Halaman Utama</a></p>
                         </div>
 
