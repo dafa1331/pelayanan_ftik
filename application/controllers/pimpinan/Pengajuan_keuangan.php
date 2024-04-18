@@ -17,7 +17,7 @@ class Pengajuan_keuangan extends CI_Controller{
     }
 
     public function detail_data(){
-        
+        //perlu di update
     }
 }
 ?>
