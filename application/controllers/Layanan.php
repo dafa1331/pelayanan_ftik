@@ -133,6 +133,25 @@ class Layanan extends CI_Controller{
         $this->pdflib->setFileName('Nama_file.pdf');
         $this->pdflib->loadView('cetak1', $data);
       }
+
+      public function validasi_layanan(){
+        $id = $this->input->post('id_layanan');
+        $validasi = $this->input->post('validasi');
+        $komentar = $this->input->post('komentar');
+
+        $data = array(
+          'validasi' => $validasi,
+          'komentar' => $komentar,
+        );
+
+        $where = array(
+          'id_layanan' => $id,
+        );
+
+        $this->m_layanan->update($where, $data, 'tb_layanan');
+        
+        redirect('layanan');
+      }
     
 
 

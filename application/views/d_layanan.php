@@ -21,7 +21,7 @@
           <div class="card">
               <div class="card-body">
                   <h4 class="header-title">Detail Data Layanan</h4>
-
+<form method="post" action="<?php echo base_url('layanan/validasi_layanan')?>">
 <table class="table table-strip">
   <?php foreach($detail as $dt) :?>
   <tr>
@@ -92,6 +92,25 @@
 <?php endforeach?>
 </table>
 
+  <div class="col-md-6 form-group">
+    
+      <input type="hidden" name="id_layanan" class="form-control" value="<?php echo $dt->id_layanan?>" required>
+      <select name="validasi" class="form-control">
+        <option value="">--Status Selesai--</option>
+        <option value="1">Selesai dikerjakan</option>
+        <option value="0">Sedang proses</option>
+      </select>
+  </div>
+  <div class="col-md-6 form-group">
+    <textarea class="form-control" name="komentar" rows="5" placeholder="Masukkan Komentar anda"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Simpan Data</button>
+  <br>
+
+</form>
+
+<br>
 <?php echo anchor('layanan','<button class=" btn btn-primary btn-sm">Kembali</button>') ?>
 </div>
 </div>

@@ -33,17 +33,27 @@
                                                 <th>Nama Pemohon</th>
                                                 <th>Asal Pemohon</th>
                                                 <th>Keperluan</th>
+                                                <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($result as $r) :?>
+                                            <?php 
+                                            foreach ($result as $r) :
+                                                if($r->validasi == 0){
+                                                    $belum = '<button class="btn btn-warning">Sedang diproses</button>';
+                                                }else if ($r->validasi == 1){
+                                                    $belum = '<button class="btn btn-success">Selesai dikerjakan</button>';
+                                                }else{
+                                                    $belum = '<button class="btn btn-danger">Belum dikerjakan</button>';
+                                                }?>
                                             <tr>
                                                 <td><?php echo $r->nomor?></td>
                                                 <td><?php echo $r->nama_pemohon?></td>
                                                 <td><?php echo $r->unit_asal?></td>
                                                 <td><?php echo $r->keperluan?></td>
-                                                <td><?php echo anchor('layanan/detail_data/'.$r->nomor,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('layanan/delete_data/'.$r->nomor,'<button class="fa fa-trash btn btn-danger btn-sm"></button>') ?></td>
+                                                <td><?php echo $belum?></td>
+                                                <td><?php echo anchor('layanan/detail_data/'.$r->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('layanan/delete_data/'.$r->nomor,'<button class="fa fa-trash btn btn-danger btn-sm"></button>') ?></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>

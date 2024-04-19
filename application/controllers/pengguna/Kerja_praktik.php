@@ -82,7 +82,8 @@ class Kerja_praktik extends CI_Controller{
           'no_hp' => $no_hp,
           'email' => $email,
           'nim_ketua' => $b[0],
-          'id_surat' =>$simpan
+          'id_surat' =>$simpan,
+          'id_layanan' => $id_layanan,
         ];
         // $insert = $this->db->insert_id('tb_anggota_kp', $anggota);
         // $insert = $this->m_layanan->simpan_data1($anggota, 'tb_kp');

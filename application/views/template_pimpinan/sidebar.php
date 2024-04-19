@@ -25,8 +25,8 @@
                             </li>
                             <li><a href="<?php echo base_url('pimpinan/rekap_layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Rekap Layanan</span></a></li>
                             <li><a href="<?php echo base_url('pimpinan/pengajuan_keuangan')?>"><i class="fa fa-credit-card"></i> <span>Pengajuan Keuangan</span></a></li>
-                            <li><a href="<?php echo base_url('backup/backup_db')?>"><i class="ti-map-alt"></i> <span>backup database</span></a></li>
-                            <li><a href="<?php echo base_url('layanan/rekap_layanan')?>"><i class="ti-map-alt"></i> <span>Rekap Layanan</span></a></li>
+                            <!-- <li><a href="#"><i class="ti-map-alt"></i> <span>data pegawai</span></a></li>
+                            <li><a href="<?php echo base_url('layanan/rekap_layanan')?>"><i class="ti-map-alt"></i> <span>Rekap Layanan</span></a></li> -->
                         </ul>
                     </nav>
                 </div>

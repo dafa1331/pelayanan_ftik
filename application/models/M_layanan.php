@@ -33,7 +33,7 @@ class M_layanan extends CI_Model{
       }
 
     function ambil_id_layanan($id){
-      $hasil = $this->db->where('nomor', $id)->get('tb_layanan');
+      $hasil = $this->db->where('id_layanan', $id)->get('tb_layanan');
       if($hasil->num_rows() > 0){
         return $hasil->result();
       }else{
