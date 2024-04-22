@@ -81,7 +81,7 @@ class Pengajuan_sk extends CI_Controller{
             'tanggal_pengajuan' => date("Y-m-d"),
             'waktu_pengajuan' => date("H:i:s"),
             'no_hp' => $no_hp,
-            'keperluan' => 'Pengajuan SK Prodi '.$prodi_pengusul,
+            // 'keperluan' => 'Pengajuan SK Prodi '.$prodi_pengusul,
             'bagian' => 'tata laksana dan teknologi informasi',
             'update_at' => date("Y-m-d"),
             'acc_prodi' => 1,

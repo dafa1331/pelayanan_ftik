@@ -11,6 +11,7 @@ class Layanan extends CI_Controller{
 
     public function index(){
         $data['result'] = $this->m_layanan->get_data();
+        $data['user'] = $this->m_layanan->get_data_by_username();
         $this->load->view('template_datatable/header');
         $this->load->view('template/sidebar');
         $this->load->view('v_layanan', $data);
@@ -73,6 +74,7 @@ class Layanan extends CI_Controller{
     }
 
     public function detail_data($id){
+      $data['nomor'] = $this->m_layanan->get_nomor();
       $data['detail'] = $this->m_layanan->ambil_id_layanan($id);
       $this->load->view('template_datatable/header');
       $this->load->view('template/sidebar');
@@ -138,10 +140,13 @@ class Layanan extends CI_Controller{
         $id = $this->input->post('id_layanan');
         $validasi = $this->input->post('validasi');
         $komentar = $this->input->post('komentar');
-
+        $nomor = $this->input->post('nomor');
+        $bagian = $this->input->post('bagian');
         $data = array(
           'validasi' => $validasi,
           'komentar' => $komentar,
+          'nomor' => $nomor,
+          'bagian' => $bagian,
         );
 
         $where = array(

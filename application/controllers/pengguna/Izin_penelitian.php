@@ -33,7 +33,7 @@ class Izin_penelitian extends CI_Controller{
       'waktu_pengajuan' => date("H:i:s"),
       'no_hp' => $no_hp,
       'keperluan' => 'Pengajuan Surat Pengantar Kerja Praktik',
-      'bagian' => 'customer service',
+      // 'bagian' => 'customer service',
       'update_at' => date("Y-m-d"),
 
     );

@@ -12,6 +12,18 @@ class M_layanan extends CI_Model{
         return $query->result(); // Mengembalikan hasil query sebagai objek array
     }
 
+    public function get_data_by_username(){
+        $user = $this->session->userdata('username');
+      
+        $this->db->select('*');
+        $this->db->join('tb_user', 'tb_layanan.bagian = tb_user.bagian');
+        $this->db->from('tb_layanan');
+        $this->db->where('tb_layanan.bagian', $user);
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function update($where, $data, $table){
       $this->db->where($where);
       $this->db->update($table, $data);
@@ -301,10 +313,5 @@ class M_layanan extends CI_Model{
       return $this->db->get('tb_layanan')->result();// Tampilkan data transaksi sesuai tanggal yang diinput oleh user pada filter
     }
 
-
-
-
-
-  
 }
 ?>

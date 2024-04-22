@@ -22,12 +22,15 @@
               <div class="card-body">
                   <h4 class="header-title">Detail Data Layanan</h4>
 <form method="post" action="<?php echo base_url('layanan/validasi_layanan')?>">
+
 <table class="table table-strip">
   <?php foreach($detail as $dt) :?>
+    <input type="hidden" name="id_layanan" class="form-control" value="<?php echo $dt->id_layanan?>" required>
   <tr>
     <td width="200 px">Nomor</td>
     <td width="10 px">:</td>
-    <td><?php echo $dt->nomor?></td>
+    
+    <td><input type="text" class="form-control" name="nomor" value="<?php echo $nomor?>" readonly></td>
   </tr>
 
   <tr>
@@ -78,12 +81,29 @@
     <td><?php echo $dt->keperluan?></td>
   </tr>
 
+  <?php if($this->session->userdata('username') == 'csftik' || $this->session->userdata('username') == 'superadmin'){?>
+  <tr>
+    <td width="200 px">Tim Kerja</td>
+    <td width="10 px">:</td>
+    <td><select name="bagian" class="form-control">
+      <option value="<?php echo $dt->bagian?>"><?php echo $dt->bagian?></option>
+      <option value="akademik">Akademik</option>
+      <option value="kemahasiswaan">Kemahasiswaan</option>
+      <option value="keuangan dan perencanaan">Keuangan dan Perencanaan</option>
+      <option value="humas dan kerjasama">Humas dan Kerjasama</option>
+      <option value="rumah tangga dan bmn">Rumah Tanggga dan BMN</option>
+      <option value="kepegawaian">Kepegawaian</option>
+      <option value="customer service">Customer Service FTIK</option>
+      <option value="tata laksana dan teknologi informasi"> Tata Laksana dan TI</option>
+    </select></td>
+  </tr>
+  <?php }else { ?>
   <tr>
     <td width="200 px">Tim Kerja</td>
     <td width="10 px">:</td>
     <td><?php echo $dt->bagian?></td>
   </tr>
-
+  <?php }?>
   <tr>
     <td width="200 px">Berkas Pendukung (optional)</td>
     <td width="10 px">:</td>
@@ -92,9 +112,12 @@
 <?php endforeach?>
 </table>
 
+<?php
+if($this->session->userdata('username') != 'csftik' || $this->session->userdata('username') != 'csftik'){?>
+
   <div class="col-md-6 form-group">
     
-      <input type="hidden" name="id_layanan" class="form-control" value="<?php echo $dt->id_layanan?>" required>
+      
       <select name="validasi" class="form-control">
         <option value="">--Status Selesai--</option>
         <option value="1">Selesai dikerjakan</option>
@@ -107,6 +130,7 @@
 
   <button type="submit" class="btn btn-success">Simpan Data</button>
   <br>
+<?php } ?>
 
 </form>
 

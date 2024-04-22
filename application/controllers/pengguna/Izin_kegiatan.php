@@ -53,7 +53,7 @@ class Izin_kegiatan extends CI_Controller
             'waktu_pengajuan' => date("H:i:s"),
             'no_hp' => $no_hp,
             'keperluan' => 'Pengajuan Izin Kegiatan Mahasiswa Prodi '.$prodi,
-            'bagian' => 'kemahasiswaan',
+            // 'bagian' => 'kemahasiswaan',
             'update_at' => date("Y-m-d"),
             // 'berkas_pendukung' => $berkas,
         );

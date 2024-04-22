@@ -14,6 +14,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- page title area end -->
             <div class="main-content-inner">
                 <div class="row">
@@ -22,7 +23,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Data Layanan</h4>
-                                <?php echo anchor('layanan/insert','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
+
+                                <?php if($this->session->userdata('username') == 'superadmin' || $this->session->userdata('username') == 'csftik') {
+                                echo anchor('layanan/insert','<button class="btn btn-primary btn-sm">Tambah</button>'); }
+                                else {
+                                }?>
                                 <br>
                                 <br>
                                 <div class="data-tables datatable-primary">
@@ -37,8 +42,10 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+                                        <?php if($this->session->userdata('username') == 'superadmin' || $this->session->userdata('username') == 'csftik' ){ ?>
                                         <tbody>
                                             <?php 
+                                            
                                             foreach ($result as $r) :
                                                 if($r->validasi == 0){
                                                     $belum = '<button class="btn btn-warning">Sedang diproses</button>';
@@ -57,7 +64,32 @@
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>
+                                        <?php } else {?>
+                                            <tbody>
+                                            <?php 
+                                            
+                                            foreach ($user as $r) :
+                                                if($r->validasi == 0){
+                                                    $belum = '<button class="btn btn-warning">Sedang diproses</button>';
+                                                }else if ($r->validasi == 1){
+                                                    $belum = '<button class="btn btn-success">Selesai dikerjakan</button>';
+                                                }else{
+                                                    $belum = '<button class="btn btn-danger">Belum dikerjakan</button>';
+                                                }?>
+                                            <tr>
+                                                <td><?php echo $r->nomor?></td>
+                                                <td><?php echo $r->nama_pemohon?></td>
+                                                <td><?php echo $r->unit_asal?></td>
+                                                <td><?php echo $r->keperluan?></td>
+                                                <td><?php echo $belum?></td>
+                                                <td><?php echo anchor('layanan/detail_data/'.$r->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('layanan/delete_data/'.$r->nomor,'<button class="fa fa-trash btn btn-danger btn-sm"></button>') ?></td>
+                                            </tr>
+                                            <?php endforeach?>
+                                        </tbody>
+                                        <?php } ?>
                                     </table>
+                                    
+                                        
                                 </div>
                             </div>
                         </div>

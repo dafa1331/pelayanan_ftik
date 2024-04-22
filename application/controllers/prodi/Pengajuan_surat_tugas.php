@@ -80,7 +80,7 @@ class Pengajuan_surat_tugas extends CI_Controller
                 'waktu_pengajuan' => date("H:i:s"),
                 'no_hp' => $no_hp,
                 'keperluan' => 'Pengajuan Surat Tugas Prodi ' . $prodi_pengusul,
-                'bagian' => 'tata laksana dan teknologi informasi',
+                // 'bagian' => 'tata laksana dan teknologi informasi',
                 'update_at' => date("Y-m-d"),
                 'berkas_pendukung' => $lampiran,
                 'acc_prodi' => 1,

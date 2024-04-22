@@ -84,7 +84,7 @@ class Pengajuan_rab extends CI_Controller{
             'waktu_pengajuan' => date("H:i:s"),
             'no_hp' => $no_hp,
             'keperluan' => 'Pengajuan RAB Prodi '.$prodi,
-            'bagian' => 'keuangan dan perencanaan',
+            // 'bagian' => 'keuangan dan perencanaan',
             'update_at' => date("Y-m-d"),
             'acc_prodi' => 1,
       
