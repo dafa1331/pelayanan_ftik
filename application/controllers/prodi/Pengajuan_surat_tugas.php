@@ -71,7 +71,7 @@ class Pengajuan_surat_tugas extends CI_Controller
             $surat_tugas = $this->m_layanan->simpan_data_layanan($data, 'tb_pengajuan_surat_tugas_prodi');
 
             $layanan = array(
-                'nomor' => $nomor,
+                // 'nomor' => $nomor,
                 'nama_pemohon' => $nama_pengusul,
                 'nip_pemohon' => $nip_pengusul,
                 'status_pemohon' => 'Pegawai',

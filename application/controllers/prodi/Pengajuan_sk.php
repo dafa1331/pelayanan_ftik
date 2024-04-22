@@ -73,7 +73,7 @@ class Pengajuan_sk extends CI_Controller{
           }
 
           $layanan = array(
-            'nomor' => $nomor,
+            // 'nomor' => $nomor,
             'nama_pemohon' => $nama_pengusul,
             'nip_pemohon' => $nip_pengusul,
             'status_pemohon' => 'Pegawai',

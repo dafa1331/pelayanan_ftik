@@ -26,7 +26,7 @@ class Pengajuan_rab extends CI_Controller{
     }
 
     public function proses_insert(){
-        $nomor = $this->input->post('nomor');
+        // $nomor = $this->input->post('nomor');
         $kegiatan = $this->input->post('nama_kegiatan');
         $pic = $this->input->post('pic_kegiatan');
         $nip = $this->input->post('nip_pic');
@@ -75,7 +75,7 @@ class Pengajuan_rab extends CI_Controller{
           }
 
           $layanan = array(
-            'nomor' => $nomor,
+            // 'nomor' => $nomor,
             'nama_pemohon' => $pic,
             'nip_pemohon' => $nip,
             'status_pemohon' => 'Pegawai',

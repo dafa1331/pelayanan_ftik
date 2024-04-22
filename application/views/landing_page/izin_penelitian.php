@@ -37,9 +37,9 @@
 
                   <div class="row gy-2 gx-md-3">
 
-                    <div class="col-md-12 form-group">
+                    <!-- <div class="col-md-12 form-group">
                       <input type="text" name="nomor" class="form-control" value="<?php echo $nomor?>" placeholder="Masukkan Nomor Layanan" required readonly>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-12 form-group">
                       <input type="text" name="nama_mhs" class="form-control" placeholder="Masukkan Nama"  required>

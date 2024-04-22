@@ -24,7 +24,7 @@ class Izin_penelitian extends CI_Controller{
     
 
     $layanan = array(
-      'nomor' => $nomor,
+      // 'nomor' => $nomor,
       'nama_pemohon' => $nama,
       'nip_pemohon' => $nim,
       'status_pemohon' => 'Mahasiswa',

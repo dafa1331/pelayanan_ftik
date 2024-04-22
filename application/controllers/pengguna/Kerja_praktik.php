@@ -26,7 +26,7 @@ class Kerja_praktik extends CI_Controller{
       $b = $this->input->post('nim_anggota');
 
     $layanan = array(
-      'nomor' => $nomor,
+      // 'nomor' => $nomor,
       'nama_pemohon' => $a[0],
       'nip_pemohon' => $b[0],
       'status_pemohon' => 'Mahasiswa',
