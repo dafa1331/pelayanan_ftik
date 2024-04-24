@@ -116,6 +116,8 @@
         <option value="0">Tidak Disetujui</option>
       </select>
   </div>
+
+  <button type="submit" class="btn btn-success">Simpan</button>
   <?php } else{ 
     if($dt->acc_fakultas == 0) {
       $acc = '<button class="btn btn-danger">belum disetujui</button>';
@@ -132,10 +134,10 @@
     </table>
     
   <?php } ?>
-  <button type="submit" class="btn btn-success">Simpan</button>
+  
 </form>
 <br>
-<?php echo anchor('keuangan','<button class=" btn btn-primary btn-sm">Kembali</button>') ?>
+<?php echo anchor('kemahasiswaan','<button class=" btn btn-primary btn-sm">Kembali</button>') ?>
 </div>
 </div>
 </div>
