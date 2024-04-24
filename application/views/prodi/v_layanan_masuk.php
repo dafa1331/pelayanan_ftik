@@ -49,10 +49,10 @@
                                             <tr>
                                                 <td><?php echo $no++?></td>
                                                 <td><?php echo $l->nama_pemohon?></td>
-                                                <td><?php echo $l->nama_pemohon?></td> 
-                                                <td><?php echo $l->nama_pemohon?></td>
+                                                <td><?php echo $l->nip_pemohon?></td> 
+                                                <td><?php echo $l->keperluan?></td>
                                                 <td><?php echo $belum?></td>
-                                                <td><?php echo anchor('prodi/acc_prodi/detail/'.$l->nomor,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><?php echo anchor('prodi/acc_prodi/detail/'.$l->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
                                             </tr>
                                            <?php endforeach?>
                                            <!-- prodi/acc_prodi/detail_data/ -->

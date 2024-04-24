@@ -29,9 +29,12 @@
   <tr>
     <td width="200 px">Nomor</td>
     <td width="10 px">:</td>
-    
+    <?php if($dt->nomor == ''){?>
     <td><input type="text" class="form-control" name="nomor" value="<?php echo $nomor?>" readonly></td>
-  </tr>
+    <?php }else{ ?>
+      <td><input type="text" class="form-control" name="nomor" value="<?php echo $dt->nomor?>" readonly></td>
+      <?php } ?>
+    </tr>
 
   <tr>
     <td width="200 px">Nama</td>
@@ -81,6 +84,16 @@
     <td><?php echo $dt->keperluan?></td>
   </tr>
 
+  <tr>
+    <td width="200 px">Validasi Prodi</td>
+    <td width="10 px">:</td>
+    <?php if($dt->acc_prodi = 0){
+      $acc = '<button class="btn btn-danger">belum di validasi</button>';}
+      else{
+        $acc = '<button class="btn btn-success">sudah di validasi</button>'; } ?>
+    <td><?php echo $acc?></td>
+  </tr>
+
   <?php if($this->session->userdata('username') == 'csftik' || $this->session->userdata('username') == 'superadmin'){?>
   <tr>
     <td width="200 px">Tim Kerja</td>
@@ -101,8 +114,9 @@
   <tr>
     <td width="200 px">Tim Kerja</td>
     <td width="10 px">:</td>
-    <td><?php echo $dt->bagian?></td>
+    <td><input type="text" class="form-control" name="bagian" value="<?php echo $dt->bagian?>" readonly></td>
   </tr>
+  
   <?php }?>
   <tr>
     <td width="200 px">Berkas Pendukung (optional)</td>
@@ -127,10 +141,10 @@ if($this->session->userdata('username') != 'csftik' || $this->session->userdata(
   <div class="col-md-6 form-group">
     <textarea class="form-control" name="komentar" rows="5" placeholder="Masukkan Komentar anda"></textarea>
   </div>
-
+  <?php } ?>
   <button type="submit" class="btn btn-success">Simpan Data</button>
   <br>
-<?php } ?>
+
 
 </form>
 

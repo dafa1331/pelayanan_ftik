@@ -124,7 +124,7 @@
 
 </form>
 <br>
-<?php echo anchor('pimpinan/pengajuan_keuangan','<button class=" btn btn-primary btn-sm">Kembali</button>') ?>
+<?php echo anchor('keuangan','<button class=" btn btn-primary btn-sm">Kembali</button>') ?>
 </div>
 </div>
 </div>

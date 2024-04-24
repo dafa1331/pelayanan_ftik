@@ -39,7 +39,7 @@ class Izin_kegiatan extends CI_Controller
                 die();
                 // redirect('pegawai/insert');
             } else {
-                $foto = $this->upload->data('file_name');
+                $berkas = $this->upload->data('file_name');
             }
         }
 

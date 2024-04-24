@@ -13,15 +13,15 @@ class M_layanan extends CI_Model{
     }
 
     public function get_data_by_username(){
-        $user = $this->session->userdata('username');
-      
-        $this->db->select('*');
-        $this->db->join('tb_user', 'tb_layanan.bagian = tb_user.bagian');
-        $this->db->from('tb_layanan');
-        $this->db->where('tb_layanan.bagian', $user);
+      $level = $this->session->userdata('username');
+      $this->db->select('*');
+      $this->db->join('tb_user', 'tb_layanan.bagian = tb_user.bagian');
+      $this->db->from('tb_layanan');
+      $this->db->order_by('validasi', 'asc');
+      $this->db->where('tb_user.username', $level);
 
-        $query = $this->db->get();
-        return $query->result();
+      $query = $this->db->get();
+      return $query->result();
     }
 
     public function update($where, $data, $table){
@@ -312,6 +312,21 @@ class M_layanan extends CI_Model{
 
       return $this->db->get('tb_layanan')->result();// Tampilkan data transaksi sesuai tanggal yang diinput oleh user pada filter
     }
+
+    public function get_hima() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_izin_kegiatan_mahasiswa');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+  }
+
+  function detail_kemahasiswaan($id){
+    $hasil = $this->db->where('id_izin_mahasiswa', $id)->get('tb_izin_kegiatan_mahasiswa');
+    if($hasil->num_rows() > 0){
+      return $hasil->result();
+    }else{
+      return false;
+    }
+  }
 
 }
 ?>
