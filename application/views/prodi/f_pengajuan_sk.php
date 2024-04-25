@@ -21,11 +21,14 @@
                 <div class="card-body">
                     <h4 class="header-title">Tambah Data Pengajuan SK</h4>
 
-                    <form method="post" action="<?php echo base_url('prodi/pengajuan_sk/proses_insert')?>">
+                    <!-- <form method="post" action="<?php echo base_url('prodi/pengajuan_sk/proses_insert')?>"> -->
+                    <?php echo form_open_multipart('prodi/pengajuan_sk/proses_insert')?>
                     <div class="col-lg-8 mt-10 mt-lg-0">
 
                       <div class="row gy-2 gx-md-3">
-
+                      <div class="col-md-12 form-group">
+                        <a class="btn btn-success" href="<?php echo base_url()?>assets/format_lampiran_sk.xlsx">download lampiran</a>
+                      </div>
                       <!-- <div class="col-md-12 form-group">
                         <input type="text" name="nomor" class="form-control" value="<?php echo $nomor?>" placeholder="Masukkan Nomor Layanan" required readonly>
                       </div> -->
@@ -70,7 +73,7 @@
                           </select>
                         </div>
                         
-                        <div>
+                        <!-- <div>
                         <div id="formContainer" class="col-md-12">
                           <div class="row gy-2 gx-md-3">
 
@@ -79,14 +82,18 @@
                         <div class="col-md-12 form-group">
                           <button type="button" class="btn btn-success" id="addForm">Tambahkan Lampiran SK</button>
                         </div>
+                          </div> -->
+                          <div class="col-md-12 form-group">
+                            <label for="">Upload lampiran SK sesuai dengan format</label>
+                              <input type="file" class="form-control" name="lampiran_sk" required>
                           </div>
-                        
                       </div>
                       
                       <button type="submit" class="btn btn-primary" name="button">Simpan</button>
                     </div>
-                    </form>
-                </div>
+                    <!-- </form> -->
+                    <?php echo form_close()?>
+                  </div>
 
             </div>
         </div>

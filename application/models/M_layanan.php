@@ -317,16 +317,30 @@ class M_layanan extends CI_Model{
       // Ambil data dari tabel atau sumber data lainnya
       $query = $this->db->get('tb_izin_kegiatan_mahasiswa');
       return $query->result(); // Mengembalikan hasil query sebagai objek array
-  }
-
-  function detail_kemahasiswaan($id){
-    $hasil = $this->db->where('id_izin_mahasiswa', $id)->get('tb_izin_kegiatan_mahasiswa');
-    if($hasil->num_rows() > 0){
-      return $hasil->result();
-    }else{
-      return false;
     }
-  }
+
+    function detail_kemahasiswaan($id){
+      $hasil = $this->db->where('id_izin_mahasiswa', $id)->get('tb_izin_kegiatan_mahasiswa');
+      if($hasil->num_rows() > 0){
+        return $hasil->result();
+      }else{
+        return false;
+      }
+    }
+    public function get_sk() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_pengajuan_sk');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+    }
+
+    function detail_sk($id){
+      $hasil = $this->db->where('id_pengajuan', $id)->get('tb_pengajuan_sk');
+      if($hasil->num_rows() > 0){
+        return $hasil->result();
+      }else{
+        return false;
+      }
+    }
 
 }
 ?>

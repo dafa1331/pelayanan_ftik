@@ -41,6 +41,22 @@ class Pengajuan_sk extends CI_Controller{
         $tugas = $this->input->post('tugas');
         $i = 0;
 
+        $lampiran_sk = $_FILES['lampiran_sk'];
+        if ($lampiran_sk = '') {
+        } else {
+            $config['upload_path'] = './assets/berkas_pendukung';
+            $config['allowed_types'] = 'xlsx';
+            $config['file_name'] = 'lampiran_sk '.$judul_sk.' '.$prodi_pengusul;
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('lampiran_sk')) {
+                echo "gagal upload";
+                die();
+                // redirect('pegawai/insert');
+            } else {
+                $lampiran_sk = $this->upload->data('file_name');
+            }
+        }
+
         $pengajuan_sk = array(
             'nama_pengusul' => $nama_pengusul,
             'nip_pengusul' => $nip_pengusul,
@@ -51,26 +67,27 @@ class Pengajuan_sk extends CI_Controller{
             'judul_sk' => $judul_sk,
             'tanggal_pengajuan' => date("Y-m-d"),
             'honor' => $honor,
+            'lampiran_sk' => $lampiran_sk,
         );
 
         $simpan = $this->m_layanan->simpan_data_layanan($pengajuan_sk, 'tb_pengajuan_sk');
 
-        if ($nama_anggota[0] !== null) {
-            foreach ($nama_anggota as $row) {
-              $lampiran = [
-                'nama_anggota' => $row,
-                'jabatan' => $jabatan[$i],
-                'tugas' => $tugas[$i],
-                'id_pengajuan_sk' => $simpan
-              ];
+        // if ($nama_anggota[0] !== null) {
+        //     foreach ($nama_anggota as $row) {
+        //       $lampiran = [
+        //         'nama_anggota' => $row,
+        //         'jabatan' => $jabatan[$i],
+        //         'tugas' => $tugas[$i],
+        //         'id_pengajuan_sk' => $simpan
+        //       ];
              
-              $insert = $this->m_layanan->simpan_data_layanan($lampiran, 'tb_lampiran_sk');
+        //       $insert = $this->m_layanan->simpan_data_layanan($lampiran, 'tb_lampiran_sk');
       
-              if ($insert) {
-                $i++;
-              }
-            }
-          }
+        //       if ($insert) {
+        //         $i++;
+        //       }
+        //     }
+        //   }
 
           $layanan = array(
             // 'nomor' => $nomor,
@@ -81,8 +98,8 @@ class Pengajuan_sk extends CI_Controller{
             'tanggal_pengajuan' => date("Y-m-d"),
             'waktu_pengajuan' => date("H:i:s"),
             'no_hp' => $no_hp,
-            // 'keperluan' => 'Pengajuan SK Prodi '.$prodi_pengusul,
-            'bagian' => 'tata laksana dan teknologi informasi',
+            'keperluan' => 'Pengajuan SK '.$judul_sk.' '.$prodi_pengusul,
+            // 'bagian' => 'tata laksana dan teknologi informasi',
             'update_at' => date("Y-m-d"),
             'acc_prodi' => 1,
           );

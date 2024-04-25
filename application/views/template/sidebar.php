@@ -49,6 +49,9 @@
                                     <?php if($this->session->userdata('username') == 'kemahasiswaan' || $this->session->userdata('username') == 'superadmin'){?>
                                     <li><a href="<?php echo base_url('kemahasiswaan')?>">Izin Kegiatan Mahasiswa</a></li>
                                     <?php } ?>
+                                    <?php if($this->session->userdata('username') == 'tatalaksana' || $this->session->userdata('username') == 'superadmin'){?>
+                                    <li><a href="<?php echo base_url('Tata_laksana')?>">Pengajuan_SK</a></li>
+                                    <?php } ?>
                                 </ul>
                             </li>
                             
