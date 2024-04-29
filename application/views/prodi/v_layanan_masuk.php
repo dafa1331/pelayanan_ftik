@@ -22,7 +22,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Data layanan</h4>
-
+                                <?php echo anchor('prodi/pengajuan_layanan/tambah_layanan','<button class="btn btn-primary btn-sm">Tambah Layanan</button>');?>
+                                <br>
+                                <br>
                                 <div class="data-tables datatable-primary">
                                     <table id="dataTable2" class="text-center" width="100%">
                                         <thead class="text-capitalize">
@@ -59,6 +61,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <?php form_close()?>
                             </div>
                         </div>
                     </div>

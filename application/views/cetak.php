@@ -26,6 +26,7 @@
 			<th>Tanggal</th>
 			<th>Nama</th>
 			<th>Keperluan</th>
+            <th>Tim Kerja</th>
 		</tr>
 
 		<?php
@@ -41,6 +42,8 @@
                 echo "<td style='width: 80px;'>".$tgl."</td>";
                 echo "<td style='width: 100px;'>".$data->nama."</td>";
                 echo "<td style='width: 300px;'>".$data->keperluan."</td>";
+                echo "<td style='width: 300px;'>".$data->bagian."</td>";
+                echo "</tr>";
             }
         }
 		?>

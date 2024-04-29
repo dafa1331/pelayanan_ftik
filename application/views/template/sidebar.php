@@ -23,8 +23,9 @@
                             <li class="active">
                                 <a href="<?php echo base_url('dashboard')?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
-                             ?>
+                             
                             <li><a href="<?php echo base_url('layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Layanan</span></a></li>
+                            
                             <?php if($this->session->userdata('username') == 'kepegawaian' || $this->session->userdata('username') == 'superadmin') {?>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Data Pegawai</span></a>
@@ -35,33 +36,39 @@
                             </li>
                             <?php } ?>
                            
+                            <?php if($this->session->userdata('username') == 'kemahasiswaan' || $this->session->userdata('username') == 'sarprasbmn' || $this->session->userdata('username') == 'csftik' || $this->session->userdata('username') == 'superadmin') {?>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-user"></i><span>Layanan Mahasiswa</span></a>
                                 <ul class="collapse">
-                                <?php if($this->session->userdata('username') == 'csftik' || $this->session->userdata('username') == 'superadmin') {?>
+                                    <?php if($this->session->userdata('username') == 'csftik' || $this->session->userdata('username') == 'superadmin') {?>
                                     <li><a href="<?php echo base_url('pengantar_kp')?>">Pengantar Kerja Praktik</a></li>
                                     <li><a href="<?php echo base_url('Surat_tugas_kp')?>">Surat Tugas Kerja Praktik</a></li>
                                     <li><a href="<?php echo base_url('tugas_akhir')?>">Izin Penelitian</a></li>
                                     <?php } ?>
+                                    
                                     <?php if($this->session->userdata('username') == 'sarprasbmn' || $this->session->userdata('username') == 'superadmin'){?>
                                     <li><a href="<?php echo base_url('pinjam')?>">Peminjaman Alat</a></li>
                                     <?php } ?>
                                     <?php if($this->session->userdata('username') == 'kemahasiswaan' || $this->session->userdata('username') == 'superadmin'){?>
                                     <li><a href="<?php echo base_url('kemahasiswaan')?>">Izin Kegiatan Mahasiswa</a></li>
                                     <?php } ?>
-                                    <?php if($this->session->userdata('username') == 'tatalaksana' || $this->session->userdata('username') == 'superadmin'){?>
-                                    <li><a href="<?php echo base_url('Tata_laksana')?>">Pengajuan_SK</a></li>
-                                    <?php } ?>
                                 </ul>
                             </li>
-                            
+                            <?php }?>
+
+                            <?php if($this->session->userdata('username') == 'tatalaksana' || $this->session->userdata('username') == 'superadmin'){?>
+                            <li><a href="<?php echo base_url('tata_laksana')?>"><i class="fa fa-file"></i> <span>Pengajuan Surat Keputusan</span></a></li>
+                            <?php } ?>
+
                             <?php if($this->session->userdata('username') == 'keuangan' || $this->session->userdata('username') == 'superadmin') {?>
                             <li><a href="<?php echo base_url('keuangan')?>"><i class="fa fa-credit-card"></i> <span>Pengajuan Keuangan</span></a></li>
                             <?php } ?>
+
                             <?php if($this->session->userdata('username') == 'superadmin') {?>
                             <li><a href="<?php echo base_url('user')?>"><i class="fa fa-users"></i> <span>User</span></a></li>
                             <li><a href="<?php echo base_url('backup/backup_db')?>"><i class="fa fa-database"></i> <span>backup database</span></a></li>
                             <?php } ?>
+
                             <?php if($this->session->userdata('username') == 'superadmin' || $this->session->userdata('username') == 'csftik') {?>
                             <li><a href="<?php echo base_url('layanan/rekap_layanan')?>"><i class="fa fa-file-text-o"></i> <span>Rekap Layanan</span></a></li>
                             <?php } ?>

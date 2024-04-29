@@ -61,6 +61,7 @@
                                                 <th>Tanggal</th>
                                                 <th>Nama Pemohon</th>
                                                 <th>Keperluan</th>
+                                                <th>Tim Kerja</th>
                                                 
                                             </tr>
                                         </thead>
@@ -78,6 +79,7 @@
                                                         echo "<td>".$tgl."</td>";
                                                         echo "<td>".$data->nama_pemohon."</td>";
                                                         echo "<td>".$data->keperluan."</td>";
+                                                        echo "<td>".$data->bagian."</td>";
                                                         echo "</tr>";
                                                     }
                                                 }
