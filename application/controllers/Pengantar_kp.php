@@ -48,6 +48,40 @@ class Pengantar_kp extends CI_Controller{
     redirect('pengantar_kp');
   }
 
+  public function edit_data($id){
+    $data['detail'] = $this->m_layanan->detail_kp($id);
+    $data['detail1'] = $this->m_layanan->detail_kp1($id);
+    $data['detail2'] = $this->m_layanan->get_data_nomor($id);
+    $this->load->view('template_datatable/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('e_pengantar_kp', $data);
+    $this->load->view('template_datatable/footer');
+  }
+
+  public function proses_edit(){
+    $id = $this->input->post('id');
+    $jabatan_pimpinan = $this->input->post('jabatan_pimpinan');
+    $alamat_instansi = $this->input->post('alamat_instansi');
+    $tanggal_mulai = $this->input->post('tanggal_mulai');
+    $tanggal_selesai = $this->input->post('tanggal_selesai');
+
+    $edit_data = array(
+      'jabatan_pimpinan' => $jabatan_pimpinan,
+      'alamat_instansi' => $alamat_instansi,
+      'tanggal_mulai' => $tanggal_mulai,
+      'tanggal_selesai' => $tanggal_selesai,
+    );
+
+    $where = array(
+      'id_surat' => $id,
+    );
+
+    $this->m_layanan->update($where, $edit_data, 'tb_nomor_pengantar_kp');
+
+    redirect('pengantar_kp');
+
+  }
+
   public function cetak($id){
     $data['detail'] = $this->m_layanan->detail_kp($id);
     $data['detail2'] = $this->m_layanan->get_data_nomor($id);
@@ -60,6 +94,8 @@ class Pengantar_kp extends CI_Controller{
 
     
   }
+
+  
 
 
 }

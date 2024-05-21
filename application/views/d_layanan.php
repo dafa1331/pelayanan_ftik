@@ -88,9 +88,11 @@
     <td width="200 px">Validasi Prodi</td>
     <td width="10 px">:</td>
     <?php if($dt->acc_prodi = 0){
-      $acc = '<button class="btn btn-danger">belum di validasi</button>';}
+      // $acc = '<button class="btn btn-danger">belum di validasi</button>';}
+      $acc = '<div style="border" class="btn btn-danger">belum di validasi</div>';}
       else{
-        $acc = '<button class="btn btn-success">sudah di validasi</button>'; } ?>
+        // $acc = '<button class="btn btn-success">sudah di validasi</button>'; }
+        $acc = '<div style="border" class="btn btn-success">sudah di validasi</div>'; } ?>
     <td><?php echo $acc?></td>
   </tr>
 
