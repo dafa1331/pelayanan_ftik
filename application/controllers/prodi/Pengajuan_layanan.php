@@ -14,12 +14,28 @@ class Pengajuan_layanan extends CI_Controller{
         $this->load->view('template_prodi/footer');
     }
 
+    public function layanan_prodi(){
+        $data['layanan'] = $this->m_layanan->get_layanan_by_prodi1();
+        $this->load->view('template_prodi/header');
+        $this->load->view('template_prodi/sidebar');
+        $this->load->view('prodi/v_permohonan_layanan_prodi', $data);
+        $this->load->view('template_prodi/footer');
+    }
+
+    public function detail($id){
+        $data['detail'] = $this->m_layanan->ambil_id_layanan($id);
+        $this->load->view('template_prodi/header');
+        $this->load->view('template_prodi/sidebar');
+        $this->load->view('prodi/d_layanan_masuk', $data);
+        $this->load->view('template_prodi/footer');
+    }
+
     public function tambah_layanan(){
         $data['pegawai'] = $this->m_layanan->tampil_prodi();
-        $this->load->view('template_datatable/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('template_prodi/header');
+        $this->load->view('template_prodi/sidebar');
         $this->load->view('prodi/f_layanan', $data);
-        $this->load->view('template_datatable/footer');
+        $this->load->view('template_prodi/footer');
     }
 
     public function proses_tambah(){

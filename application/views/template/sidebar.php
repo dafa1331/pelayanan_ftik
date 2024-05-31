@@ -26,6 +26,8 @@
                              
                             <li><a href="<?php echo base_url('layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Layanan</span></a></li>
                             
+                            <li><a href="<?php echo base_url('daftar_layanan')?>"><i class="fa fa-pencil-square-o"></i> <span>Daftar Layanan</span></a></li>
+
                             <?php if($this->session->userdata('username') == 'kepegawaian' || $this->session->userdata('username') == 'superadmin') {?>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Data Pegawai</span></a>
@@ -105,10 +107,8 @@
                     <div class="col-sm-6 clearfix">
             <div class="user-profile pull-right">
                 <img class="avatar user-thumb" src="<?php echo base_url()?>assets/images/author/avatar.png" alt="avatar">
-                <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down"></i></h4>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Message</a>
-                    <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="<?php echo base_url('auth/keluar')?>">Log Out</a>
                 </div>
             </div>

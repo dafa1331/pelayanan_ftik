@@ -5,10 +5,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Halaman Layanan</h4>
+                            <h4 class="page-title pull-left">Halaman Pegawai</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="<?php echo base_url('prodi/pengajuan_layanan')?>">Home</a></li>
-                                <li><span>Layanan Masuk</span></li>
+                                <li><a href="<?php echo base_url('dashboard')?>">Home</a></li>
+                                <li><span>Daftar Layanan FTIK</span></li>
                             </ul>
                         </div>
                     </div>
@@ -21,47 +21,35 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Data layanan</h4>
-                               
+                                <h4 class="header-title">List Layanan</h4>
+                                <?php echo anchor('daftar_layanan/tambah','<button class="btn btn-primary btn-sm">Tambah</button>') ?>
                                 <br>
                                 <br>
                                 <div class="data-tables datatable-primary">
-                                    <table id="dataTable2" class="text-center" width="100%">
+                                    <table id="dataTable2" class="text-center"  width="100%">
                                         <thead class="text-capitalize">
                                             <tr>
                                                 <th>Nomor</th>
-                                                <th>Nama Mahasiswa</th>
-                                                <th>NIM</th>
-                                                <th>Layanan</th>
-                                                <th>Status Validasi</th>
+                                                <th>Nama Layanan</th>
+                                                <th>Tujuan Layanan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            
                                             $no = 1; 
-                                            foreach ($layanan as $l) :
-                                                if($l->acc_prodi == 0){
-                                                    $belum = '<button class="btn btn-danger">Belum</button>';
-                                                }else{
-                                                    $belum = '<button class="btn btn-success">Sudah</button>';
-                                                }
-                                            ?>
+                                            foreach ($result as $r) :?>
                                             <tr>
                                                 <td><?php echo $no++?></td>
-                                                <td><?php echo $l->nama_pemohon?></td>
-                                                <td><?php echo $l->nip_pemohon?></td> 
-                                                <td><?php echo $l->keperluan?></td>
-                                                <td><?php echo $belum?></td>
-                                                <td><?php echo anchor('prodi/acc_prodi/detail/'.$l->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><?php echo $r->nama_layanan?></td>
+                                                <td><?php echo $r->kegunaan?></td>
+                                                <td><?php echo anchor('daftar_layanan/detail_data/'.$r->id_daftar_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?> <?php echo anchor('daftar_layanan/delete_data/'.$r->id_daftar_layanan,'<button class="fa fa-trash btn btn-danger btn-sm"></button>') ?></td>
+                                                <!-- <td><a href="<?php echo $r->tautan?>" class="btn btn-success">Buka</a></td> -->
                                             </tr>
-                                           <?php endforeach?>
-                                           <!-- prodi/acc_prodi/detail_data/ -->
+                                            <?php endforeach?>
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php form_close()?>
                             </div>
                         </div>
                     </div>

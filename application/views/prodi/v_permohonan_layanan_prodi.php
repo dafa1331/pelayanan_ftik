@@ -22,7 +22,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Data layanan</h4>
-                               
+                                <?php echo anchor('prodi/pengajuan_layanan/tambah_layanan','<button class="btn btn-primary btn-sm">Tambah Layanan</button>');?>
                                 <br>
                                 <br>
                                 <div class="data-tables datatable-primary">
@@ -33,7 +33,6 @@
                                                 <th>Nama Mahasiswa</th>
                                                 <th>NIM</th>
                                                 <th>Layanan</th>
-                                                <th>Status Validasi</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -42,19 +41,13 @@
                                             
                                             $no = 1; 
                                             foreach ($layanan as $l) :
-                                                if($l->acc_prodi == 0){
-                                                    $belum = '<button class="btn btn-danger">Belum</button>';
-                                                }else{
-                                                    $belum = '<button class="btn btn-success">Sudah</button>';
-                                                }
                                             ?>
                                             <tr>
                                                 <td><?php echo $no++?></td>
                                                 <td><?php echo $l->nama_pemohon?></td>
                                                 <td><?php echo $l->nip_pemohon?></td> 
                                                 <td><?php echo $l->keperluan?></td>
-                                                <td><?php echo $belum?></td>
-                                                <td><?php echo anchor('prodi/acc_prodi/detail/'.$l->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
+                                                <td><?php echo anchor('prodi/pengajuan_layanan/detail/'.$l->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
                                             </tr>
                                            <?php endforeach?>
                                            <!-- prodi/acc_prodi/detail_data/ -->

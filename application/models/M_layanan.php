@@ -6,11 +6,22 @@ class M_layanan extends CI_Model{
         return $this->db->insert_id();
      }
 
+     public function insert_data_list($data) {
+      $this->db->insert('tb_daftar_layanan', $data);
+      return $this->db->insert_id();
+   }
+
     public function get_data() {
         // Ambil data dari tabel atau sumber data lainnya
         $query = $this->db->get('tb_layanan');
         return $query->result(); // Mengembalikan hasil query sebagai objek array
     }
+
+    public function get_data_daftar() {
+      // Ambil data dari tabel atau sumber data lainnya
+      $query = $this->db->get('tb_daftar_layanan');
+      return $query->result(); // Mengembalikan hasil query sebagai objek array
+  }
 
     public function get_data_by_username(){
       $level = $this->session->userdata('username');
@@ -231,6 +242,20 @@ class M_layanan extends CI_Model{
       $this->db->from('tb_layanan');
       $this->db->order_by('acc_prodi', 'asc');
       $this->db->where('tb_user.username', $level);
+      $this->db->where('tb_layanan.status_pemohon', 'Mahasiswa');
+
+      $query = $this->db->get();
+      return $query->result();
+    }
+
+    public function get_layanan_by_prodi1(){
+      $level = $this->session->userdata('username');
+      $this->db->select('*');
+      $this->db->join('tb_user', 'tb_layanan.unit_asal = tb_user.bagian');
+      $this->db->from('tb_layanan');
+      $this->db->order_by('acc_prodi', 'asc');
+      $this->db->where('tb_user.username', $level);
+      $this->db->where('tb_layanan.status_pemohon', 'Pegawai');
 
       $query = $this->db->get();
       return $query->result();

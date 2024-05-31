@@ -23,8 +23,14 @@
 
                     <?php echo form_open_multipart('prodi/pengajuan_layanan/proses_tambah')?>
                     <div class="col-lg-8 mt-10 mt-lg-0">
-
+                        
                       <div class="row gy-2 gx-md-3">
+
+                        <div class="col-md-12 form-group">
+                            <label for=""><i>Unduh lampiran di bawah ini bila perlu</i></label><br>
+                            <a class="btn btn-success" href="<?php echo base_url()?>assets/format_lampiran.xlsx">download lampiran</a>
+                        </div>
+
 
                         <div class="col-md-12 form-group">
                           <input type="text" name="nama_pemohon" class="form-control" placeholder="Masukkan Nama Pemohon" required>
@@ -54,6 +60,7 @@
                         </div>
 
                         <div class="col-md-12 form-group">
+                            <label for="">lampiran<i> (Maks 1 Mb)</i></label>
                           <input type="file" class="form-control" name="berkas_pendukung">
                         </div>
 

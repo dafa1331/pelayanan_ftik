@@ -7,5 +7,7 @@ class Layanan_mahasiswa extends CI_Controller{
 		$this->load->view('landing_page/layanan_mahasiswa');
 		$this->load->view('landing_page/template_halaman/footer');
 	}
+
+	
 }
 ?>
