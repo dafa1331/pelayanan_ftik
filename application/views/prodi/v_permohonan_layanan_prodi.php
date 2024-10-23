@@ -33,6 +33,7 @@
                                                 <th>Nama Mahasiswa</th>
                                                 <th>NIM</th>
                                                 <th>Layanan</th>
+                                                <th>status</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -41,12 +42,20 @@
                                             
                                             $no = 1; 
                                             foreach ($layanan as $l) :
-                                            ?>
+                                                if($l->validasi == 0){
+                                                    $belum = '<pre style="background-color: #ffff00; padding: 10px; color:#000000;">sedang diproses</pre>';
+                                                }else if ($l->validasi == 1){
+                                                    $belum = '<pre style="background-color: #4caf50; padding: 10px; color:#ffffff;">Selesai dikerjakan</pre> ';
+                                                }else{
+                                                    $belum = '<pre style="background-color: #ff0000; padding: 10px; color:#ffffff;">Belum dikerjakan dikerjakan</pre>';
+                                                }?>
+
                                             <tr>
                                                 <td><?php echo $no++?></td>
                                                 <td><?php echo $l->nama_pemohon?></td>
                                                 <td><?php echo $l->nip_pemohon?></td> 
                                                 <td><?php echo $l->keperluan?></td>
+                                                <td><?php echo $belum?></td>
                                                 <td><?php echo anchor('prodi/pengajuan_layanan/detail/'.$l->id_layanan,'<button class="fa fa-eye btn btn-primary btn-sm"></button>') ?></td>
                                             </tr>
                                            <?php endforeach?>

@@ -7,5 +7,7 @@ class Layanan_pegawai extends CI_Controller{
 		$this->load->view('landing_page/layanan_pegawai');
 		$this->load->view('landing_page/template_halaman/footer');
 	}
+
+	
 }
 ?>

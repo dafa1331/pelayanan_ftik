@@ -28,7 +28,7 @@
 
                         <div class="col-md-12 form-group">
                             <label for=""><i>Unduh lampiran di bawah ini bila perlu</i></label><br>
-                            <a class="btn btn-success" href="<?php echo base_url()?>assets/format_lampiran.xlsx">download lampiran</a>
+                            <a class="btn btn-success" href="<?php echo base_url()?>assets/format_lampiran_new.xlsx">download lampiran</a>
                         </div>
 
 

@@ -48,11 +48,11 @@
                                             
                                             foreach ($result as $r) :
                                                 if($r->validasi == 0){
-                                                    $belum = '<button class="btn btn-warning">Sedang diproses</button>';
+                                                    $belum = '<pre style="background-color: #ffff00; padding: 10px; color:#000000;">sedang diproses</pre>';
                                                 }else if ($r->validasi == 1){
-                                                    $belum = '<button class="btn btn-success">Selesai dikerjakan</button>';
+                                                    $belum = '<pre style="background-color: #4caf50; padding: 10px; color:#ffffff;">Selesai dikerjakan</pre> ';
                                                 }else{
-                                                    $belum = '<button class="btn btn-danger">Belum dikerjakan</button>';
+                                                    $belum = '<pre style="background-color: #ff0000; padding: 10px; color:#ffffff;">Belum dikerjakan dikerjakan</pre>';
                                                 }?>
                                             <tr>
                                                 <td><?php echo $r->nomor?></td>
@@ -70,11 +70,11 @@
                                             
                                             foreach ($user as $r) :
                                                 if($r->validasi == 0){
-                                                    $belum = '<button class="btn btn-warning">Sedang diproses</button>';
+                                                    $belum = '<pre style="background-color: #ff0000; padding: 10px; color:#ffff00;">sedang proses</pre>';
                                                 }else if ($r->validasi == 1){
-                                                    $belum = '<button class="btn btn-success">Selesai dikerjakan</button>';
+                                                    $belum = '<pre style="background-color: #4caf50; padding: 10px; color:#ffffff;">Selesai dikerjakan</pre> ';
                                                 }else{
-                                                    $belum = '<button class="btn btn-danger">Belum dikerjakan</button>';
+                                                    $belum = '<pre style="background-color: #ff0000; padding: 10px; color:#ffffff;">Belum dikerjakan dikerjakan</pre>';
                                                 }?>
                                             <tr>
                                                 <td><?php echo $r->nomor?></td>
