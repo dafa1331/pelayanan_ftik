@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 10:19 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Oct 23, 2024 at 03:01 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,8 +40,8 @@ CREATE TABLE `kebutuhan_data` (
 --
 
 INSERT INTO `kebutuhan_data` (`id_kebutuhan_data`, `tujuan_surat`, `pimpinan_instansi`, `kebutuhan_data`, `id_penelitian`) VALUES
-(15, 'Dinas Perumahan dan Pemukiman Kota Metro', 'Kepala Dinas Perumahan dan Pemukiman Kota Metro', '1. Data KK di Kota Metro\r\n2. Data RW di Kota Metro', 19),
-(16, 'Dinas Pekerjaan Umum Kota Metro', 'Kepala Dinas Pekerjaan Umum Kota Metro', '1. data lampu jalan\r\n2. data jumlah tiang listrik', 19);
+(17, 'tes1', 'kepala dinas coba coba', '1. data penelitian\r\n2. data penelitian \r\n3. data penelitian \r\n4. data penelit', 20),
+(18, 'tes2', 'kepala dinas coba coba 2', '1. data penelitian\r\n2. data penelitian \r\n3. data penelitian \r\n4. data penelit', 20);
 
 -- --------------------------------------------------------
 
@@ -54,15 +54,6 @@ CREATE TABLE `tb_alat_ftik` (
   `nama_alat` varchar(255) NOT NULL,
   `id_pinjam` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_alat_ftik`
---
-
-INSERT INTO `tb_alat_ftik` (`id_alat`, `nama_alat`, `id_pinjam`) VALUES
-(1, 'speaker', 1),
-(2, 'speaker', 2),
-(3, 'converter', 2);
 
 -- --------------------------------------------------------
 
@@ -80,6 +71,89 @@ CREATE TABLE `tb_anggaran` (
   `id_pengajuan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tb_anggaran`
+--
+
+INSERT INTO `tb_anggaran` (`id_anggaran`, `jenis_akun`, `kode_akun`, `uraian`, `keterangan`, `penggunaan_anggaran`, `id_pengajuan`) VALUES
+(2, 'tes', 'sdsdada', 'belanja sewa', 'fhgdhgdf', 10000000, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_daftar_layanan`
+--
+
+CREATE TABLE `tb_daftar_layanan` (
+  `id_daftar_layanan` int(11) NOT NULL,
+  `nama_layanan` varchar(255) NOT NULL,
+  `tautan` varchar(255) NOT NULL,
+  `kegunaan` varchar(255) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_daftar_layanan`
+--
+
+INSERT INTO `tb_daftar_layanan` (`id_daftar_layanan`, `nama_layanan`, `tautan`, `kegunaan`, `deskripsi`) VALUES
+(1, 'Permohonan Izin Kegiatan Mahasiswa ke Luar Kampus', 'https://ftik.itera.ac.id/wp-content/uploads/2024/05/Permohonan-Izin-Kegiatan-Luar-Kampus-ITERA1-1.docx', 'Mahasiswa', 'ini merupakan sebuah form layanan untuk permohonan mahasiswa ke luar kampus');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_data_anggota_surat_tugas`
+--
+
+CREATE TABLE `tb_data_anggota_surat_tugas` (
+  `id_anggota` int(11) NOT NULL,
+  `nama_mhs` varchar(255) NOT NULL,
+  `nim_mhs` varchar(255) NOT NULL,
+  `prodi_mhs` varchar(255) NOT NULL,
+  `alamat_instansi` varchar(255) NOT NULL,
+  `jabatan_pimpinan` varchar(255) NOT NULL,
+  `tujuan_surat` varchar(255) NOT NULL,
+  `tanggal_mulai` date NOT NULL,
+  `tanggal_selesai` date NOT NULL,
+  `no_hp` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `nim_ketua` varchar(255) NOT NULL,
+  `id_surat_tugas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_izin_kegiatan_mahasiswa`
+--
+
+CREATE TABLE `tb_izin_kegiatan_mahasiswa` (
+  `id_izin_mahasiswa` int(11) NOT NULL,
+  `nama_mhs` varchar(255) NOT NULL,
+  `nim` varchar(255) NOT NULL,
+  `prodi_mhs` varchar(255) NOT NULL,
+  `no_hp` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `kegiatan` varchar(255) NOT NULL,
+  `nama_himpunan` varchar(255) NOT NULL,
+  `tanggal_mulai` date NOT NULL,
+  `tanggal_selesai` date NOT NULL,
+  `waktu_mulai` time NOT NULL,
+  `waktu_selesai` time NOT NULL,
+  `jumlah_peserta` varchar(255) NOT NULL,
+  `lokasi_kegiatan` varchar(255) NOT NULL,
+  `berkas` varchar(255) NOT NULL,
+  `acc_fakultas` int(11) NOT NULL,
+  `acc_prodi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_izin_kegiatan_mahasiswa`
+--
+
+INSERT INTO `tb_izin_kegiatan_mahasiswa` (`id_izin_mahasiswa`, `nama_mhs`, `nim`, `prodi_mhs`, `no_hp`, `email`, `kegiatan`, `nama_himpunan`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `jumlah_peserta`, `lokasi_kegiatan`, `berkas`, `acc_fakultas`, `acc_prodi`) VALUES
+(6, 'tes', '123', 'Teknik Sipil', '085765650434', 'asa@ssa', 'fsfasfasf', 'sddasda', '2024-04-24', '2024-04-24', '07:20:00', '16:20:00', '100', 'embung', '', 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -93,15 +167,10 @@ CREATE TABLE `tb_izin_penelitian` (
   `prodi_mhs` varchar(255) NOT NULL,
   `judul_ta` varchar(255) NOT NULL,
   `no_hp` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `nomor_surat` varchar(255) NOT NULL,
+  `tanggal_surat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_izin_penelitian`
---
-
-INSERT INTO `tb_izin_penelitian` (`id_penelitian`, `nama_mhs`, `nim`, `prodi_mhs`, `judul_ta`, `no_hp`, `email`) VALUES
-(19, 'Afan Darmaji', '1517051051', 'Perencanaan Wilayah dan Kota', 'analisa pemasangan lampu jalan di area kota metro', '086526267281', 'dafafifa001@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -110,6 +179,7 @@ INSERT INTO `tb_izin_penelitian` (`id_penelitian`, `nama_mhs`, `nim`, `prodi_mhs
 --
 
 CREATE TABLE `tb_kp` (
+  `id_kp` int(11) NOT NULL,
   `nim_mhs` varchar(255) NOT NULL,
   `nama_mhs` varchar(255) NOT NULL,
   `prodi_mhs` varchar(255) NOT NULL,
@@ -121,18 +191,17 @@ CREATE TABLE `tb_kp` (
   `no_hp` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nim_ketua` varchar(255) NOT NULL,
-  `id_surat` int(11) NOT NULL
+  `id_surat` int(11) NOT NULL,
+  `id_layanan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_kp`
 --
 
-INSERT INTO `tb_kp` (`nim_mhs`, `nama_mhs`, `prodi_mhs`, `alamat_instansi`, `jabatan_pimpinan`, `tujuan_surat`, `tanggal_mulai`, `tanggal_selesai`, `no_hp`, `email`, `nim_ketua`, `id_surat`) VALUES
-('123456', 'nama 1', 'Teknik Sipil', 'tes alamat', 'tes jabatan', 'tes', '2024-03-15', '2024-05-15', '', 'afan.darmaji@staff.itera.ac.id', '123456', 0),
-('123457', 'nama 1', 'Teknik Sipil', 'tes alamat', 'tes jabatan', 'tes', '2024-03-15', '2024-05-15', '', 'afan.darmaji@staff.itera.ac.id', '123456', 0),
-('1517051031', 'asti', 'Perencanaan Wilayah dan Kota', 'tesdsd', 'tes jabatan', 'tes', '2024-03-30', '2024-05-21', '0815475625', 'afan.darmaji@staff.itera.ac.id', '1517051051', 0),
-('1517051051', 'afan', 'Perencanaan Wilayah dan Kota', 'tesdsd', 'tes jabatan', 'tes', '2024-03-30', '2024-05-21', '0815475625', 'afan.darmaji@staff.itera.ac.id', '1517051051', 0);
+INSERT INTO `tb_kp` (`id_kp`, `nim_mhs`, `nama_mhs`, `prodi_mhs`, `alamat_instansi`, `jabatan_pimpinan`, `tujuan_surat`, `tanggal_mulai`, `tanggal_selesai`, `no_hp`, `email`, `nim_ketua`, `id_surat`, `id_layanan`) VALUES
+(1, '123456', 'nama 1', 'Teknik Sipil', 'sasasa', 'tes jabatan', 'tes', '2024-04-19', '2024-04-23', '123', 'afandarmaji1551@gmail.com', '123456', 18, 8),
+(2, '1234568', 'nama 2', 'Teknik Sipil', 'sasasa', 'tes jabatan', 'tes', '2024-04-19', '2024-04-23', '123', 'afandarmaji1551@gmail.com', '123456', 18, 8);
 
 -- --------------------------------------------------------
 
@@ -148,13 +217,6 @@ CREATE TABLE `tb_lampiran_sk` (
   `id_pengajuan_sk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tb_lampiran_sk`
---
-
-INSERT INTO `tb_lampiran_sk` (`id_anggota_sk`, `nama_anggota`, `jabatan`, `tugas`, `id_pengajuan_sk`) VALUES
-(1, 'afan', 'ketua', 'tes', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -162,6 +224,7 @@ INSERT INTO `tb_lampiran_sk` (`id_anggota_sk`, `nama_anggota`, `jabatan`, `tugas
 --
 
 CREATE TABLE `tb_layanan` (
+  `id_layanan` int(11) NOT NULL,
   `nomor` varchar(255) NOT NULL,
   `nama_pemohon` varchar(255) NOT NULL,
   `nip_pemohon` varchar(255) NOT NULL,
@@ -174,18 +237,23 @@ CREATE TABLE `tb_layanan` (
   `bagian` varchar(255) NOT NULL,
   `update_at` date NOT NULL,
   `berkas_pendukung` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL
+  `slug` varchar(255) NOT NULL,
+  `validasi` int(11) NOT NULL,
+  `komentar` varchar(255) NOT NULL,
+  `acc_prodi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_layanan`
 --
 
-INSERT INTO `tb_layanan` (`nomor`, `nama_pemohon`, `nip_pemohon`, `status_pemohon`, `unit_asal`, `tanggal_pengajuan`, `waktu_pengajuan`, `no_hp`, `keperluan`, `bagian`, `update_at`, `berkas_pendukung`, `slug`) VALUES
-('FTIK1503240001', 'nama 1', '123456', 'Mahasiswa', 'Teknik Sipil', '2024-03-15', '04:06:42', '', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-15', '', ''),
-('FTIK1503240002', 'afan', '1517051051', 'Mahasiswa', 'Perencanaan Wilayah dan Kota', '2024-03-15', '04:20:26', '0815475625', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-15', '', ''),
-('FTIK1603240001', 'Afan Darmaji', '1517051051', 'Mahasiswa', 'Perencanaan Wilayah dan Kota', '2024-03-16', '09:08:33', '086526267281', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-03-16', '', ''),
-('FTIK2003240001', 'Maya', '1234', 'Pegawai', 'Teknik Sipil', '2024-03-20', '10:42:05', '09876', 'Pengajuan SK Prodi ', 'tata laksana dan teknologi informasi', '2024-03-20', '', '');
+INSERT INTO `tb_layanan` (`id_layanan`, `nomor`, `nama_pemohon`, `nip_pemohon`, `status_pemohon`, `unit_asal`, `tanggal_pengajuan`, `waktu_pengajuan`, `no_hp`, `keperluan`, `bagian`, `update_at`, `berkas_pendukung`, `slug`, `validasi`, `komentar`, `acc_prodi`) VALUES
+(8, 'FTIK1904240001', 'nama 1', '123456', 'Mahasiswa', 'Teknik Sipil', '2024-04-19', '06:07:15', '123', 'Pengajuan Surat Pengantar Kerja Praktik', 'customer service', '2024-04-24', '', '', 1, '', 1),
+(10, 'FTIK2204240001', 'tes', '123', 'Pegawai', 'Teknik Sipil', '2024-04-22', '09:09:01', '021545', 'Pengajuan RAB Prodi Teknik Sipil', 'keuangan dan perencanaan', '2024-04-22', '', '', 1, 'mashookk joshhh', 1),
+(11, 'FTIK2404240001', 'tes', '123', 'Mahasiswa', 'Teknik Sipil', '2024-04-24', '08:31:48', '085765650434', 'Pengajuan Izin Kegiatan Mahasiswa Prodi Teknik Sipil', 'kemahasiswaan', '2024-05-31', '', '', 0, '', 1),
+(15, 'FTIK2504240001', 'anton', '1234', 'Pegawai', 'Teknik Sipil', '2024-04-25', '06:17:52', '021545', 'Pengajuan SK tim pelaksana akreditasi sastra sipil Teknik Sipil', 'tata laksana dan teknologi informasi', '2024-04-25', '', '', 1, 'masokk jon', 1),
+(16, 'FTIK2904240001', 'tes 1', '1234', 'Pegawai', 'Perencanaan Wilayah dan Kota', '2024-04-29', '09:31:14', '02154', 'tes aja kok', 'tata laksana dan teknologi informasi', '2024-04-29', '', '', 1, 'selesai lah anjing', 1),
+(17, '', 'dono', '12345', 'Pegawai', 'Teknik Sipil', '2024-05-31', '05:48:54', '098323453', 'pengajuan SK', '', '2024-05-31', '12345.xlsx', '', 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -210,8 +278,26 @@ CREATE TABLE `tb_nomor_pengantar_kp` (
 --
 
 INSERT INTO `tb_nomor_pengantar_kp` (`id_surat`, `nim`, `jabatan_pimpinan`, `alamat_instansi`, `tanggal_mulai`, `tanggal_selesai`, `nomor_surat`, `tanggal_surat`, `id_layanan`) VALUES
-(15, '123456', 'tes jabatan', 'tes alamat', '2024-03-15', '2024-05-15', '', '0000-00-00', 0),
-(16, '1517051051', 'tes jabatan', 'tesdsd', '2024-03-30', '2024-05-21', '', '0000-00-00', 0);
+(18, '123456', 'tes jabatan1', 'sasasa', '2024-04-19', '2024-04-23', '1234', '2024-04-19', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_nomor_surat_tugas_kp`
+--
+
+CREATE TABLE `tb_nomor_surat_tugas_kp` (
+  `id_surat_tugas_kp` int(11) NOT NULL,
+  `nama_mhs` varchar(255) NOT NULL,
+  `prodi_mhs` varchar(255) NOT NULL,
+  `nim_mhs` varchar(255) NOT NULL,
+  `jabatan_pimpinan` varchar(255) NOT NULL,
+  `alamat_instansi` text NOT NULL,
+  `tanggal_mulai` date NOT NULL,
+  `tanggal_selesai` date NOT NULL,
+  `nomor_surat` varchar(255) NOT NULL,
+  `tanggal_surat` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -253,10 +339,20 @@ CREATE TABLE `tb_pengajuan_kegiatan` (
   `pic_kegiatan` varchar(255) NOT NULL,
   `nip_pic` varchar(255) NOT NULL,
   `no_hp` varchar(255) NOT NULL,
+  `tanggal_pengajuan` date NOT NULL,
   `tgl_mulai_kegiatan` date NOT NULL,
   `tgl_selesai_kegiatan` date NOT NULL,
-  `prodi_pengusul` varchar(255) NOT NULL
+  `prodi_pengusul` varchar(255) NOT NULL,
+  `status_pengajuan` int(11) NOT NULL,
+  `komentar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_pengajuan_kegiatan`
+--
+
+INSERT INTO `tb_pengajuan_kegiatan` (`id_pengajuan`, `nama_kegiatan`, `pic_kegiatan`, `nip_pic`, `no_hp`, `tanggal_pengajuan`, `tgl_mulai_kegiatan`, `tgl_selesai_kegiatan`, `prodi_pengusul`, `status_pengajuan`, `komentar`) VALUES
+(2, 'tes', 'tes', '123', '021545', '2024-04-22', '2024-04-22', '2024-05-01', 'Teknik Sipil', 1, 'mantapp djiwoo');
 
 -- --------------------------------------------------------
 
@@ -274,15 +370,35 @@ CREATE TABLE `tb_pengajuan_sk` (
   `tgl_akhir` date NOT NULL,
   `tanggal_pengajuan` date NOT NULL,
   `judul_sk` text NOT NULL,
-  `honor` varchar(255) NOT NULL
+  `honor` varchar(255) NOT NULL,
+  `lampiran_sk` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_pengajuan_sk`
 --
 
-INSERT INTO `tb_pengajuan_sk` (`id_pengajuan`, `nama_pengusul`, `nip_pengusul`, `no_hp`, `prodi_pengusul`, `tgl_awal`, `tgl_akhir`, `tanggal_pengajuan`, `judul_sk`, `honor`) VALUES
-(3, 'Maya', '1234', '09876', 'program studi teknik sipil', '2024-03-01', '2024-07-31', '2024-03-20', 'SK tes', 'Tidak');
+INSERT INTO `tb_pengajuan_sk` (`id_pengajuan`, `nama_pengusul`, `nip_pengusul`, `no_hp`, `prodi_pengusul`, `tgl_awal`, `tgl_akhir`, `tanggal_pengajuan`, `judul_sk`, `honor`, `lampiran_sk`) VALUES
+(7, 'anton', '1234', '021545', 'Teknik Sipil', '2024-04-01', '2024-06-30', '2024-04-25', 'tim pelaksana akreditasi sastra sipil', 'Iya', 'lampiran_sk_tim_pelaksana_akreditasi_sastra_sipil_Teknik_Sipil.xlsx');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_pengajuan_surat_tugas_prodi`
+--
+
+CREATE TABLE `tb_pengajuan_surat_tugas_prodi` (
+  `id_surat_tugas` int(11) NOT NULL,
+  `nama_pengusul` varchar(255) NOT NULL,
+  `nip_pengusul` varchar(255) NOT NULL,
+  `prodi_pengusul` varchar(255) NOT NULL,
+  `no_hp` varchar(255) NOT NULL,
+  `kegiatan` varchar(255) NOT NULL,
+  `tanggal_mulai_kegiatan` date NOT NULL,
+  `tanggal_selesai_kegiatan` date NOT NULL,
+  `tanggal_pengajuan` date NOT NULL,
+  `lampiran` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -304,14 +420,6 @@ CREATE TABLE `tb_pinjam_alat` (
   `kondisi` varchar(255) NOT NULL,
   `status_pengembalian` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_pinjam_alat`
---
-
-INSERT INTO `tb_pinjam_alat` (`id_pinjam`, `nama_mhs`, `nim_mhs`, `prodi`, `no_hp`, `keperluan`, `tanggal_pinjam`, `waktu_pinjam`, `tanggal_kembali`, `waktu_kembali`, `kondisi`, `status_pengembalian`) VALUES
-(1, 'tes', '1234', '', '0215468464', '0', '2024-03-18', '00:00:00', '0000-00-00', '00:00:00', '', 0),
-(2, 'tes2', '123454', 'Teknik Sipil', '0215468464', 'tes', '2024-03-18', '00:00:00', '0000-00-00', '00:00:00', '', 0);
 
 -- --------------------------------------------------------
 
@@ -357,7 +465,9 @@ INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `bagian`,
 (8, 'customer service', 'csftik', '$2y$10$GvqN4Sfp3E2S9NH32iCo9O9hjc5OaIG60lJHxUTSnzXGN.5BanQtO', 'customer service', 12, 'pegawai'),
 (9, 'tata laksana dan teknologi informasi', 'tatalaksana', '$2y$10$pnxKTYOnKs0VUyvTym2Ckui7VUgug7AMZIfMOYNjXWZV5CR8YA7Da', 'tata laksana dan teknologi informasi', 12, 'pegawai'),
 (10, 'Program Studi Teknik Sipil', 'prodi_sipil', '$2y$10$Qx3qcZrGAAlIF394JmtH0OgSv9vcutMki.5.mpGnkhGPg21ZMuDPG', 'Teknik Sipil', 12, 'prodi'),
-(11, 'Program Studi Perencanaan Wilayah dan Kota', 'prodi_pwk', '$2y$10$T1zigFBXWuh0eIj6mKAL1eIYg2CrF3rOvQHh83ZrRv9pds0ZSEMLO', 'Perencanaan Wilayah dan Kota', 12, 'prodi');
+(11, 'Program Studi Perencanaan Wilayah dan Kota', 'prodi_pwk', '$2y$10$T1zigFBXWuh0eIj6mKAL1eIYg2CrF3rOvQHh83ZrRv9pds0ZSEMLO', 'Perencanaan Wilayah dan Kota', 12, 'prodi'),
+(12, 'Iwan Maryawan', 'iwan_maryawan', '$2y$10$wa5KYcW8yFFWLUr9zWrSmeZYctPKXwgwh.v7ST/D9KOFN6.76LYWK', 'kasubbag', 12, 'pimpinan'),
+(13, 'Arif Rohman', 'arif_rohman', '$2y$10$/EVSc5ZMFeyWx5/7tKrALeu8ikeZ2yyXAbbB7aaCW9VLNswmS52P2', 'dekan', 12, 'pimpinan');
 
 --
 -- Indexes for dumped tables
@@ -382,6 +492,24 @@ ALTER TABLE `tb_anggaran`
   ADD PRIMARY KEY (`id_anggaran`);
 
 --
+-- Indexes for table `tb_daftar_layanan`
+--
+ALTER TABLE `tb_daftar_layanan`
+  ADD PRIMARY KEY (`id_daftar_layanan`);
+
+--
+-- Indexes for table `tb_data_anggota_surat_tugas`
+--
+ALTER TABLE `tb_data_anggota_surat_tugas`
+  ADD PRIMARY KEY (`id_anggota`);
+
+--
+-- Indexes for table `tb_izin_kegiatan_mahasiswa`
+--
+ALTER TABLE `tb_izin_kegiatan_mahasiswa`
+  ADD PRIMARY KEY (`id_izin_mahasiswa`);
+
+--
 -- Indexes for table `tb_izin_penelitian`
 --
 ALTER TABLE `tb_izin_penelitian`
@@ -391,7 +519,7 @@ ALTER TABLE `tb_izin_penelitian`
 -- Indexes for table `tb_kp`
 --
 ALTER TABLE `tb_kp`
-  ADD PRIMARY KEY (`nim_mhs`);
+  ADD PRIMARY KEY (`id_kp`);
 
 --
 -- Indexes for table `tb_lampiran_sk`
@@ -403,13 +531,19 @@ ALTER TABLE `tb_lampiran_sk`
 -- Indexes for table `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
-  ADD PRIMARY KEY (`nomor`);
+  ADD PRIMARY KEY (`id_layanan`);
 
 --
 -- Indexes for table `tb_nomor_pengantar_kp`
 --
 ALTER TABLE `tb_nomor_pengantar_kp`
   ADD PRIMARY KEY (`id_surat`);
+
+--
+-- Indexes for table `tb_nomor_surat_tugas_kp`
+--
+ALTER TABLE `tb_nomor_surat_tugas_kp`
+  ADD PRIMARY KEY (`id_surat_tugas_kp`);
 
 --
 -- Indexes for table `tb_pegawai`
@@ -428,6 +562,12 @@ ALTER TABLE `tb_pengajuan_kegiatan`
 --
 ALTER TABLE `tb_pengajuan_sk`
   ADD PRIMARY KEY (`id_pengajuan`);
+
+--
+-- Indexes for table `tb_pengajuan_surat_tugas_prodi`
+--
+ALTER TABLE `tb_pengajuan_surat_tugas_prodi`
+  ADD PRIMARY KEY (`id_surat_tugas`);
 
 --
 -- Indexes for table `tb_pinjam_alat`
@@ -455,7 +595,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `kebutuhan_data`
 --
 ALTER TABLE `kebutuhan_data`
-  MODIFY `id_kebutuhan_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_kebutuhan_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tb_alat_ftik`
@@ -467,13 +607,37 @@ ALTER TABLE `tb_alat_ftik`
 -- AUTO_INCREMENT for table `tb_anggaran`
 --
 ALTER TABLE `tb_anggaran`
-  MODIFY `id_anggaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_anggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_daftar_layanan`
+--
+ALTER TABLE `tb_daftar_layanan`
+  MODIFY `id_daftar_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_data_anggota_surat_tugas`
+--
+ALTER TABLE `tb_data_anggota_surat_tugas`
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_izin_kegiatan_mahasiswa`
+--
+ALTER TABLE `tb_izin_kegiatan_mahasiswa`
+  MODIFY `id_izin_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_izin_penelitian`
 --
 ALTER TABLE `tb_izin_penelitian`
-  MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `tb_kp`
+--
+ALTER TABLE `tb_kp`
+  MODIFY `id_kp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_lampiran_sk`
@@ -482,28 +646,40 @@ ALTER TABLE `tb_lampiran_sk`
   MODIFY `id_anggota_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tb_layanan`
+--
+ALTER TABLE `tb_layanan`
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT for table `tb_nomor_pengantar_kp`
 --
 ALTER TABLE `tb_nomor_pengantar_kp`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `tb_nomor_surat_tugas_kp`
+--
+ALTER TABLE `tb_nomor_surat_tugas_kp`
+  MODIFY `id_surat_tugas_kp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_pengajuan_kegiatan`
 --
 ALTER TABLE `tb_pengajuan_kegiatan`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_pengajuan_sk`
 --
 ALTER TABLE `tb_pengajuan_sk`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tb_pinjam_alat`
+-- AUTO_INCREMENT for table `tb_pengajuan_surat_tugas_prodi`
 --
-ALTER TABLE `tb_pinjam_alat`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `tb_pengajuan_surat_tugas_prodi`
+  MODIFY `id_surat_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tb_prodi`
@@ -515,7 +691,7 @@ ALTER TABLE `tb_prodi`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
